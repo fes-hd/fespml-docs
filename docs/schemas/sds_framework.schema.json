@@ -1,0 +1,295 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "sds_framework",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "The schema to verify this document against.",
+            "format": "uri"
+        },
+        "tag": {
+            "type": "string",
+            "description": "Tag name used to identify this data file"
+        },
+        "description": {
+            "type": "string",
+            "description": "Description for this data file"
+        },
+        "imgfile": {
+            "type": "string",
+            "description": "Path to image file displayed in the framework selection form"
+        },
+        "pickFor": {
+            "type": "string",
+            "description": "Direction from the origin where the support should be placed",
+            "default": "DOWN",
+            "enum": ["DOWN", "UP", "LEFT", "RIGHT", "FRONT", "BACK"]
+        },
+        "vertical": {
+            "type": "boolean",
+            "description": "If true, this framework is for vertical piping.",
+            "default": false
+        },
+        "minBore": {
+            "type": "string",
+            "description": "Minimum bore size of the ancillary that can be attached to the framework",
+            "default": "0mm"
+        },
+        "maxBore": {
+            "type": "string",
+            "description": "Maximum bore size of the ancillary that can be attached to the framework",
+            "default": "1200mm"
+        },
+        "endPrepLeft": {
+            "$ref": "#/definitions/endprep",
+            "description": "End preparation type for the left side of the bar section"
+        },
+        "endPrepRight": {
+            "$ref": "#/definitions/endprep",
+            "description": "End preparation type for the right side of the bar section"
+        },
+        "endExtendOffset": {
+            "type": "string",
+            "description": "Offset applied when auto-stretching end of the bar section",
+            "default": "0mm"
+        },
+        "bar": {
+            "$ref": "#/definitions/section",
+            "description": "Definition of the bar section on which ancillaries are placed",
+            "defaultProperties": [
+                "suffix",
+                "spref",
+                "matref",
+                "jusline",
+                "lmirror",
+                "ydir",
+                "postCommands",
+                "startJoints",
+                "endJoints"
+            ]
+        },
+        "legs": {
+            "type": "array",
+            "description": "Definitions of the leg sections",
+            "items": {
+                "$ref": "#/definitions/section",
+                "defaultProperties": [
+                    "suffix",
+                    "side",
+                    "spref",
+                    "matref",
+                    "jusline",
+                    "lmirror",
+                    "ydir",
+                    "zdir",
+                    "xoffset",
+                    "yoffset",
+                    "zoffset",
+                    "postCommands",
+                    "startJoints",
+                    "endJoints"
+                ]
+            },
+            "format": "tabs"
+        },
+        "postCommands": {
+            "type": "array",
+            "description": "PML commands to execute after creating the framework",
+            "items": {
+                "type": "string"
+            },
+            "format": "table"
+        }
+    },
+    "required": ["tag"],
+    "defaultProperties": [
+        "$schema",
+        "tag",
+        "description",
+        "imgfile",
+        "pickFor",
+        "vertical",
+        "maxBore",
+        "minBore",
+        "endPrepLeft",
+        "endPrepRight",
+        "endExtendOffset",
+        "bar",
+        "legs",
+        "postCommands"
+    ],
+    "definitions": {
+        "endprep": {
+            "type": "string",
+            "description": "End preparation type for the bar section",
+            "default": "OPEN",
+            "enum": ["OPEN", "CLOSE", "ANGLE"],
+            "enumDescriptions": [
+                "End is not connected to another section.",
+                "End is connected to another section.",
+                "End is connected to another section with angled cut."
+            ]
+        },
+        "section": {
+            "type": "object",
+            "properties": {
+                "suffix": {
+                    "type": "string",
+                    "description": "GENSEC Name suffix"
+                },
+                "side": {
+                    "type": "string",
+                    "description": "Specifies the side of the bar section to which the leg section is connected.",
+                    "default": "LEFT",
+                    "enum": ["LEFT", "RIGHT", "MID"],
+                    "enumDescriptions": [
+                        "Connects to the left side of the bar section.",
+                        "Connects to the right side of the bar section.",
+                        "Connects to the midpoint of the bar section."
+                    ]
+                },
+                "spref": {
+                    "type": "string",
+                    "description": "SPCO Ref specifying the steel profile of this GENSEC"
+                },
+                "matref": {
+                    "type": "string",
+                    "description": "SOLI Ref specifying the material of this GENSEC"
+                },
+                "jusline": {
+                    "type": "string",
+                    "description": "P-Line name used for this GENSEC justification",
+                    "default": "NA"
+                },
+                "lmirror": {
+                    "type": "boolean",
+                    "description": "If true, this GENSEC shape is mirrored",
+                    "default": false
+                },
+                "ydir": {
+                    "type": "string",
+                    "description": "Preferred Y direction for this GENSEC"
+                },
+                "zdir": {
+                    "type": "string",
+                    "description": "Direction along which the leg section runs"
+                },
+                "xoffset": {
+                    "type": "string",
+                    "description": "X offset from the GENSEC start position",
+                    "default": "0mm"
+                },
+                "yoffset": {
+                    "type": "string",
+                    "description": "Y offset from the GENSEC start position",
+                    "default": "0mm"
+                },
+                "zoffset": {
+                    "type": "string",
+                    "description": "Z offset from the GENSEC start position",
+                    "default": "0mm"
+                },
+                "postCommands": {
+                    "type": "array",
+                    "description": "PML commands to execute after creating the section",
+                    "items": {
+                        "type": "string"
+                    },
+                    "format": "table"
+                },
+                "startJoints": {
+                    "type": "array",
+                    "description": "Definitions of FIXING joints connected to the start of the section",
+                    "items": {
+                        "$ref": "#/definitions/joint"
+                    },
+                    "format": "tabs"
+                },
+                "endJoints": {
+                    "type": "array",
+                    "description": "Definitions of FIXING joints connected to the end of the section",
+                    "items": {
+                        "$ref": "#/definitions/joint"
+                    },
+                    "format": "tabs"
+                }
+            },
+            "required": ["suffix", "ydir"]
+        },
+        "joint": {
+            "type": "object",
+            "properties": {
+                "condition": {
+                    "type": "string",
+                    "description": "Logical expression that must be satisfied by the picked element to which the support is connected"
+                },
+                "spref": {
+                    "type": "string",
+                    "description": "SPCO Ref specifying the joint catalog of this FIXING"
+                },
+                "matref": {
+                    "type": "string",
+                    "description": "SOLI Ref specifying the material of this FIXING"
+                },
+                "orientation": {
+                    "type": "string",
+                    "description": "Orientation of this FIXING",
+                    "default": "Y is N WRT OWN and Z is U WRT OWN"
+                },
+                "cutback": {
+                    "type": "string",
+                    "description": "Length by which the end of the attached section will be shortened",
+                    "default": "0mm"
+                },
+                "postCommands": {
+                    "type": "array",
+                    "description": "PML commands to execute after creating FIXING",
+                    "items": {
+                        "type": "string"
+                    },
+                    "format": "table"
+                },
+                "members": {
+                    "type": "array",
+                    "description": "Definitions of the member FIXING",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "spref": {
+                                "type": "string",
+                                "description": "SPCO Ref specifying the member joint catalog of this FIXING"
+                            },
+                            "matref": {
+                                "type": "string",
+                                "description": "SOLI Ref specifying the material of this FIXING",
+                                "default": null
+                            },
+                            "position": {
+                                "type": "string",
+                                "description": "Position of this FIXING",
+                                "default": "E 0mm N 0mm U 0mm WRT OWN"
+                            },
+                            "orientation": {
+                                "type": "string",
+                                "description": "Orientation of this FIXING",
+                                "default": "Y is N WRT OWN and Z is U WRT OWN"
+                            }
+                        },
+                        "required": ["spref", "matref", "position", "orientation"]
+                    },
+                    "format": "table"
+                }
+            },
+            "required": ["spref"],
+            "defaultProperties": [
+                "condition",
+                "spref",
+                "matref",
+                "orientation",
+                "cutback",
+                "members"
+            ]
+        }
+    }
+}

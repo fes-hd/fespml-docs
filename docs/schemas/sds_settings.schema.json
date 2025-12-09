@@ -1,0 +1,177 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "sds_settings",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "The schema to verify this document against.",
+            "format": "uri"
+        },
+        "zoneCondition": {
+            "type": "string",
+            "description": "Logical expression that ZONE must satisfy for support creation"
+        },
+        "volmSuffix": {
+            "type": "string",
+            "description": "VOLM Name suffix to determine ZONE where to create a support"
+        },
+        "drwgSuffix": {
+            "type": "string",
+            "description": "DRWG Name suffix for support drawings"
+        },
+        "overShlbSuffix": {
+            "type": "string",
+            "description": "SHLB Name suffix for overlay sheets of support drawings"
+        },
+        "catePurpose": {
+            "type": "string",
+            "description": "CATE Purpose value that indicates this is a support catalog"
+        },
+        "assyTagAttrib": {
+            "type": "string",
+            "description": "Attribute name used to store ancillary data tag"
+        },
+        "assyTagPrelim": {
+            "type": "string",
+            "description": "Ancillary data tag value used to indicate a preliminary"
+        },
+        "assyAnciPath": {
+            "type": "string",
+            "description": "Path to directory where ancillary data JSON files are stored",
+            "default": "%pmllib%\\sds\\ancillaries"
+        },
+        "assyFrmwPath": {
+            "type": "string",
+            "description": "Path to directory where framework data JSON files are stored",
+            "default": "%pmllib%\\sds\\frameworks"
+        },
+        "specAnci": {
+            "type": "string",
+            "description": "SPEC Ref for ancillary catalogs",
+            "default": "/SDS-ANCI"
+        },
+        "specJoin": {
+            "type": "string",
+            "description": "SPEC Ref for structural joint catalogs",
+            "default": "/SDS-JOIN"
+        },
+        "suppoTouchHier": {
+            "type": "string",
+            "description": "Hierarchies (and below) to search for elements touched by the support"
+        },
+        "drawDefaultRegi": {
+            "type": "string",
+            "description": "Default REGI Ref for new data in the SDS Draw form"
+        },
+        "drawDefaultLiby": {
+            "type": "string",
+            "description": "Default LIBY Ref for new data in the SDS Draw form"
+        },
+        "drawDefaultOpt": {
+            "type": "string",
+            "description": "Default option file path for new data in the SDS Draw form",
+            "default": "%pmllib%\\sds\\drawopts\\support_drawing_a3.json"
+        },
+        "drawPublishPath": {
+            "type": "string",
+            "description": "Path to the directory where support drawings are published as PDF files",
+            "default": "%userprofile%\\sds_publish"
+        },
+        "mtoGroupMode": {
+            "type": "string",
+            "description": "Mode for grouping MTO items that share the same description.",
+            "default": "PCSONLY",
+            "enum": ["ON", "PCSONLY", "OFF"],
+            "enumDescriptions": [
+                "Group all items.",
+                "Group items that do not have a length quantity.",
+                "Do not group items."
+            ]
+        },
+        "mtoItemDefs": {
+            "type": "array",
+            "description": "MTO item definitions",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "selection": {
+                        "type": "string",
+                        "description": "PML expression that selects elements"
+                    },
+                    "desc": {
+                        "type": "string",
+                        "description": "PML expression that composes the description text"
+                    },
+                    "pcs": {
+                        "type": "string",
+                        "description": "Item quantity",
+                        "default": "1"
+                    },
+                    "length": {
+                        "type": "string",
+                        "description": "Item length",
+                        "default": "0mm"
+                    },
+                    "weight": {
+                        "type": "string",
+                        "description": "PML expression to obtain the item's weight",
+                        "default": "NWEI"
+                    },
+                    "labpos": {
+                        "type": "string",
+                        "description": "Position the item label’s leader line points to"
+                    }
+                },
+                "required": ["selection", "desc"]
+            },
+            "format": "tabs"
+        },
+        "datalDefs": {
+            "type": "array",
+            "description": "Datal file definitions",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the top-level hierarchy element"
+                    },
+                    "dbtype": {
+                        "type": "string",
+                        "description": "Target DB type for deploying the Datal file"
+                    },
+                    "file": {
+                        "type": "string",
+                        "description": "Path to the Datal file"
+                    }
+                },
+                "required": ["name", "dbtype", "file"]
+            },
+            "format": "table"
+        }
+    },
+    "required": [
+        "assyAnciPath",
+        "assyFrmwPath",
+        "specAnci",
+        "specJoin",
+        "drawPublishPath",
+        "mtoGroupMode"
+    ],
+    "defaultProperties": [
+        "$schema",
+        "assyAnciPath",
+        "assyFrmwPath",
+        "specAnci",
+        "specJoin",
+        "suppoTouchHier",
+        "drawDefaultRegi",
+        "drawDefaultLiby",
+        "drawDefaultOpt",
+        "drawPublishPath",
+        "mtoGroupMode",
+        "mtoItemDefs",
+        "datalDefs"
+    ]
+}

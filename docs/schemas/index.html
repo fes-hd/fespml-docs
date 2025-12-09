@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SDS Settings JSON Editor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
+    <style>
+      input[type="text"] {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container" style="padding-top: 15px; padding-bottom: 30px">
+      <h1>SDS Settings JSON Editor</h1>
+      <div class="input-group my-3">
+        <div class="input-group-prepend">
+          <button id="open" type="button" class="btn btn-secondary"><i class="fas fa-folder-open"></i> Open</button>
+        </div>
+        <input type="text" class="form-control" id="filename" placeholder="Filename" />
+        <div class="input-group-append">
+          <button id="download" type="button" class="btn btn-secondary">
+            <i class="fas fa-file-download"></i> Download
+          </button>
+        </div>
+      </div>
+      <div id="editor-container"></div>
+      <a href="javascript:window.scrollTo({top:0});">Back to top</a>
+    </div>
+
+    <script>
+      const schema_json = URL.parse("./" + location.search.substring(1) + ".schema.json", location.href);
+      // Load JSON editor
+      var editor = null;
+      (async () => {
+        const response = await fetch(schema_json);
+        if (!response.ok) {
+          location.replace(response.status + ".html");
+        }
+        document.querySelector("#filename").value = location.search.substring(1) + ".json"
+        const config = {
+          theme: "bootstrap4",
+          iconlib: "fontawesome5",
+          no_additional_properties: true,
+          schema: await response.json(),
+        };
+        editor = new JSONEditor(document.querySelector("#editor-container"), config);
+        editor.on("change", () => {
+          editor.getEditor("root.$schema")?.setValue(schema_json.href);
+        });
+      })();
+
+      // Callback on click Open button
+      document.querySelector("#open").addEventListener("click", () => {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = "application/json";
+        input.onchange = async () => {
+          const file = input.files[0];
+          document.querySelector("#filename").value = file.name;
+          editor.setValue(JSON.parse(await file.text()));
+        };
+        input.click();
+      });
+
+      // Callback on click Download button
+      document.querySelector("#download").addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(editor.getValue(), null, 4)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = document.querySelector("#filename").value;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    </script>
+  </body>
+</html>

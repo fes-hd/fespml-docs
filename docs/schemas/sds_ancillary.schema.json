@@ -1,0 +1,181 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "sds_ancillary",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "The schema to verify this document against.",
+            "format": "uri"
+        },
+        "tag": {
+            "type": "string",
+            "description": "Tag name used to identify this data file"
+        },
+        "description": {
+            "type": "string",
+            "description": "Description for this data file"
+        },
+        "imgfile": {
+            "type": "string",
+            "description": "Path to image file displayed in the ancillary selection form"
+        },
+        "condition": {
+            "type": "string",
+            "description": "Logical expression that picked piping component element must satisfy"
+        },
+        "owntype": {
+            "type": "string",
+            "description": "Type of the ancillary owner element",
+            "default": "SUPC",
+            "enum": ["SUPC", "TRUNNI", "LUG", "HANG"]
+        },
+        "components": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "spec": {
+                        "type": "string",
+                        "description": "SPEC Ref used to select the component"
+                    },
+                    "gtype": {
+                        "type": "string",
+                        "description": "Gtype used to select the component"
+                    },
+                    "stype": {
+                        "type": "string",
+                        "description": "Stype used to select the component"
+                    },
+                    "matref": {
+                        "type": "string",
+                        "description": "SOLI Ref specifying the material of the component"
+                    },
+                    "insu": {
+                        "type": "string",
+                        "description": "SPEC Ref specifying the insulation of the component"
+                    },
+                    "reduOffset": {
+                        "type": "string",
+                        "description": "Offset direction for bore/distance makeup reducer",
+                        "default": "CENTRE",
+                        "enum": ["CENTRE", "BOTTOM", "TOP"],
+                        "enumDescriptions": ["No offset", "Bottom-flat", "Top-flat"]
+                    },
+                    "reduBores": {
+                        "type": "array",
+                        "description": "Bore size combinations for bore/distance makeup reducer",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "abore": {
+                                    "type": "string",
+                                    "description": "Arrive bore size",
+                                    "default": "50mm"
+                                },
+                                "lbore": {
+                                    "type": "string",
+                                    "description": "Leave bore size",
+                                    "default": "50mm"
+                                }
+                            },
+                            "required": ["abore", "lbore"]
+                        },
+                        "format": "table"
+                    },
+                    "postCommands": {
+                        "type": "array",
+                        "description": "PML commands to execute after creating the component",
+                        "items": {
+                            "type": "string"
+                        },
+                        "format": "table"
+                    }
+                },
+                "required": ["spec", "gtype", "stype"],
+                "defaultProperties": ["spec", "gtype", "stype", "matref"]
+            }
+        },
+        "postCommands": {
+            "type": "array",
+            "description": "PML commands to execute after creating the ancillary",
+            "items": {
+                "type": "string"
+            },
+            "format": "table"
+        },
+        "steelEndLengths": {
+            "type": "array",
+            "description": "End lengths of steelwork that the ancillary touches by bore size",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "bore": {
+                        "type": "string",
+                        "description": "Bore size of the ancillary",
+                        "default": "50mm"
+                    },
+                    "open": {
+                        "type": "string",
+                        "description": "Length of steelwork end not connected to another steelwork",
+                        "default": "150mm"
+                    },
+                    "close": {
+                        "type": "string",
+                        "description": "Length of steelwork end connected to another steelwork",
+                        "default": "150mm"
+                    },
+                    "angle": {
+                        "type": "string",
+                        "description": "Length of steelwork end connected to another steelwork with angled cut",
+                        "default": "150mm"
+                    }
+                },
+                "required": ["bore", "open", "close", "angle"]
+            },
+            "format": "table"
+        },
+        "steelBoltGauges": {
+            "type": "array",
+            "description": "Distances from the edge to the bolt hole on steelwork touched by the bolting ancillary, grouped by Spref",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "spref": {
+                        "type": "string",
+                        "description": "SPCO Ref"
+                    },
+                    "dist": {
+                        "type": "string",
+                        "description": "Distance from the edge to the bolt hole on the steelwork",
+                        "default": "25mm"
+                    }
+                },
+                "required": ["spref", "dist"]
+            },
+            "format": "table"
+        },
+        "steelTouchedCmds": {
+            "type": "array",
+            "description": "PML commands to execute when the ancillary touches any steelwork",
+            "items": {
+                "type": "string"
+            },
+            "format": "table"
+        }
+    },
+    "required": ["tag"],
+    "defaultProperties": [
+        "$schema",
+        "tag",
+        "description",
+        "imgfile",
+        "condition",
+        "owntype",
+        "components",
+        "postCommands",
+        "steelEndLengths",
+        "steelBoltGauges",
+        "steelTouchedCmds"
+    ]
+}

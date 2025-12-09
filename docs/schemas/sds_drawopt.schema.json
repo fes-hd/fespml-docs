@@ -1,0 +1,395 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "sds_drawopt",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "The schema to verify this document against.",
+            "format": "uri"
+        },
+        "templateDrwg": {
+            "type": "string",
+            "description": "Template DRWG Ref",
+            "default": "/FES/DRA/PRJ/TMP/SUPPO/A3"
+        },
+        "plotStyle": {
+            "type": "string",
+            "description": "PLTSTY Ref used when generating the PDF",
+            "default": "/FES-Monochrome"
+        },
+        "drawProcedures": {
+            "type": "array",
+            "description": "PML commands for creating a support drawing",
+            "items": {
+                "type": "string"
+            },
+            "default": [
+                "!!SDSDRAWER.ClearLayers('ALL')",
+                "!!SDSDRAWER.UpdateViews()",
+                "!!SDSDRAWER.DrawMtoTable()",
+                "!!SDSDRAWER.DrawGeneralSymbols('ALL')",
+                "!!SDSDRAWER.DrawWeldSymbols('FRONT RSIDE PLAN')",
+                "!!SDSDRAWER.DrawDimensions('FRONT RSIDE PLAN')",
+                "!!SDSDRAWER.DrawRefDimensions('PLAN')",
+                "!!SDSDRAWER.DrawPipeNames('PLAN RSIDE FRONT')",
+                "!!SDSDRAWER.DrawItemLabels('ISO3')",
+                "!!SDSDRAWER.DrawDetailOlays()"
+            ],
+            "format": "table"
+        },
+        "mtoNoteName": {
+            "type": "string",
+            "description": "Search pattern for the NOTE element used to create the MTO table",
+            "default": "*/MTO"
+        },
+        "mtoSheetPos": {
+            "type": "string",
+            "description": "XY Position of the bottom-left corner of the MTO table",
+            "default": "0mm 0mm"
+        },
+        "mtoUpToDown": {
+            "type": "boolean",
+            "description": "If true, draws the MTO table from top to bottom.",
+            "default": false
+        },
+        "mtoDivisionNum": {
+            "type": "integer",
+            "description": "Number of columns the MTO table is divided into",
+            "default": 1,
+            "minimum": 1
+        },
+        "mtoColumnDefs": {
+            "type": "array",
+            "description": "Column definitions for the MTO table",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "header": {
+                        "type": "string",
+                        "description": "Column header name"
+                    },
+                    "align": {
+                        "type": "string",
+                        "description": "Column text alignment",
+                        "default": "L",
+                        "enum": ["L", "C", "R"],
+                        "enumDescriptions": ["Left", "Center", "Right"]
+                    },
+                    "width": {
+                        "type": "string",
+                        "description": "Column width",
+                        "default": "25mm"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Attribute name of the MTO item used for the column value",
+                        "enum": ["number", "desc", "qty", "pcs", "length", "weight"],
+                        "enumDescriptions": [
+                            "Part No.",
+                            "Description",
+                            "Quantity",
+                            "Quantity (pcs)",
+                            "Quantity (length)",
+                            "Weight"
+                        ]
+                    }
+                },
+                "required": ["header", "align", "width", "value"]
+            },
+            "format": "table"
+        },
+        "viewFixNorth": {
+            "type": "boolean",
+            "description": "If true, the front view is oriented to the north.",
+            "default": true
+        },
+        "touchLabelTexts": {
+            "type": "array",
+            "description": "Label definitions for elements touching the support",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "condition": {
+                        "type": "string",
+                        "description": "Logical expression that elements touching the support must satisfy"
+                    },
+                    "expression": {
+                        "type": "string",
+                        "description": "PML expression for generating the label text"
+                    }
+                },
+                "required": ["condition", "expression"]
+            },
+            "format": "table"
+        },
+        "defaultViewDef": {
+            "$ref": "#/definitions/view",
+            "description": "Default view settings",
+            "defaultProperties": [
+                "scales",
+                "maxSize",
+                "padding",
+                "nArrowPrefix",
+                "dimLayerPurp",
+                "dimStyle",
+                "dimStaggered",
+                "dimPltxtLevel",
+                "labLayerPurp",
+                "labStyle",
+                "labOrigin",
+                "labGrid",
+                "labPipeName",
+                "labPipeEnd",
+                "labPipeBreak",
+                "labWeldLeft",
+                "labWeldRight",
+                "labHoleCLines",
+                "rRules"
+            ]
+        },
+        "viewDefs": {
+            "type": "array",
+            "description": "View settings grouped by VIEW name",
+            "items": {
+                "$ref": "#/definitions/view",
+                "defaultProperties": ["name", "looking"]
+            },
+            "format": "tabs"
+        },
+        "detailsOlayName": {
+            "type": "string",
+            "description": "OLAY name suffix for detail views",
+            "default": "DETAIL"
+        },
+        "detailsXYScale": {
+            "type": "string",
+            "description": "XYScale for OLAY elements",
+            "default": "1.0 1.0"
+        },
+        "detailsSheetPos": {
+            "type": "array",
+            "description": "XY Positions of OLAY elements by their number",
+            "items": {
+                "type": "string",
+                "default": "0mm 0mm"
+            },
+            "format": "table"
+        },
+        "detailsItems": {
+            "type": "array",
+            "description": "Definitions for detail views",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "condition": {
+                        "type": "string",
+                        "description": "Logical expression that MTO items must satisfy to generate the detail view"
+                    },
+                    "overref": {
+                        "type": "string",
+                        "description": "OVER Ref for showing on the detail view"
+                    },
+                    "plotfile": {
+                        "type": "string",
+                        "description": "File path to a plot file for showing on the detail view"
+                    },
+                    "viewdir": {
+                        "type": "string",
+                        "description": "Looking direction of the detail view",
+                        "default": "-Z WRT CE"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the detail view",
+                        "default": "DETAIL"
+                    },
+                    "dimxpos": {
+                        "type": "array",
+                        "description": "Positions of dimension lines along the X direction",
+                        "items": {
+                            "type": "string"
+                        },
+                        "format": "table"
+                    },
+                    "dimypos": {
+                        "type": "array",
+                        "description": "Positions of dimension lines along the Y direction",
+                        "items": {
+                            "type": "string"
+                        },
+                        "format": "table"
+                    }
+                },
+                "required": ["condition"]
+            },
+            "format": "tabs"
+        },
+        "detailsTempOver": {
+            "type": "string",
+            "description": "Template OVER Ref for detail views",
+            "default": "/FES-SUPPO-DETAIL"
+        },
+        "detailsViewDef": {
+            "$ref": "#/definitions/view",
+            "description": "View settings for detail views",
+            "defaultProperties": ["name", "maxSize"]
+        }
+    },
+    "defaultProperties": [
+        "$schema",
+        "templateDrwg",
+        "plotStyle",
+        "drawProcedures",
+        "mtoNoteName",
+        "mtoSheetPos",
+        "mtoUpToDown",
+        "mtoDivisionNum",
+        "mtoColumnDefs",
+        "viewFixNorth",
+        "touchLabelTexts",
+        "defaultViewDef",
+        "viewDefs",
+        "detailsOlayName",
+        "detailsXYScale",
+        "detailsSheetPos",
+        "detailsItems",
+        "detailsTempOver",
+        "detailsViewDef"
+    ],
+    "definitions": {
+        "view": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Search pattern for the VIEW element name"
+                },
+                "looking": {
+                    "type": "string",
+                    "description": "Looking direction of the VIEW element",
+                    "enum": ["PLAN", "FRONT", "RSIDE", "LSIDE", "ISO1", "ISO2", "ISO3", "ISO4"],
+                    "enumDescriptions": [
+                        "Plan view",
+                        "Front view",
+                        "Right-side view",
+                        "Left-side view",
+                        "Isometric view (N is bottom-right)",
+                        "Isometric view (N is top-right)",
+                        "Isometric view (N is top-left)",
+                        "Isometric view (N is bottom-left)"
+                    ]
+                },
+                "scales": {
+                    "type": "string",
+                    "description": "Scales list separated by space for the VIEW element",
+                    "default": "1:1 1:2 1:5 1:10 1:15 1:20 1:25 1:50"
+                },
+                "maxSize": {
+                    "type": "string",
+                    "description": "Maximum size of the VIEW element",
+                    "default": "100mm 100mm"
+                },
+                "padding": {
+                    "type": "string",
+                    "description": "Length by which to expand the support modeling volume",
+                    "default": "25mm"
+                },
+                "nArrowPrefix": {
+                    "type": "string",
+                    "description": "Name prefix for north arrow symbols",
+                    "default": "/FES-NORTH-ARROW-"
+                },
+                "dimLayerPurp": {
+                    "type": "string",
+                    "description": "LAYE Purpose for dimension elements",
+                    "default": "DIM*"
+                },
+                "dimStyle": {
+                    "type": "string",
+                    "description": "DMSTYL Ref used for dimension elements",
+                    "default": "/FES-DIM-BLACK"
+                },
+                "dimStaggered": {
+                    "type": "boolean",
+                    "description": "If true, dimension texts are staggered.",
+                    "default": true
+                },
+                "dimPltxtLevel": {
+                    "type": "string",
+                    "description": "LDIM Pltxt value used to indicating elevation",
+                    "default": "EL #POSU+<WRT /*>"
+                },
+                "labLayerPurp": {
+                    "type": "string",
+                    "description": "LAYE Purpose for label elements",
+                    "default": "LAB*"
+                },
+                "labStyle": {
+                    "type": "string",
+                    "description": "LBSTYL Ref used for label elements",
+                    "default": "/FES-LABEL-BLACK"
+                },
+                "labOrigin": {
+                    "type": "string",
+                    "description": "SYTM Ref used for origin marker",
+                    "default": "/FES-ORIGIN-MARKER"
+                },
+                "labGrid": {
+                    "type": "string",
+                    "description": "SYTM Ref used for grid line name balloon",
+                    "default": "/FES-GRID-ID"
+                },
+                "labPipeName": {
+                    "type": "string",
+                    "description": "SYTM Ref used for labels indicating the PIPE name",
+                    "default": "/FES-PIPE-NAME"
+                },
+                "labPipeEnd": {
+                    "type": "string",
+                    "description": "SYTM Ref used for pipe cross-section symbol",
+                    "default": "/FES-PIPE-END"
+                },
+                "labPipeBreak": {
+                    "type": "string",
+                    "description": "SYTM Ref used for pipe break symbol",
+                    "default": "/FES-PIPE-BREAK"
+                },
+                "labWeldLeft": {
+                    "type": "string",
+                    "description": "SYTM Ref used for left-hand weld symbol",
+                    "default": "/FES-FIELD-WELD-L"
+                },
+                "labWeldRight": {
+                    "type": "string",
+                    "description": "SYTM Ref used for right-hand weld symbol",
+                    "default": "/FES-FIELD-WELD-R"
+                },
+                "labHoleCLines": {
+                    "type": "string",
+                    "description": "SYTM Ref used for centerlines of holes",
+                    "default": "/FES-CROSS-HAIRS"
+                },
+                "rRules": {
+                    "type": "array",
+                    "description": "Definitions for representation rules",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "style": {
+                                "type": "string",
+                                "description": "STYL Ref applied by the representation rule"
+                            },
+                            "criteria": {
+                                "type": "string",
+                                "description": "PML expression that selects elements to which the representation rule applies"
+                            }
+                        },
+                        "required": ["style", "criteria"]
+                    },
+                    "format": "table"
+                }
+            }
+        }
+    }
+}
