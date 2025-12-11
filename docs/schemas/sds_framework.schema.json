@@ -276,7 +276,7 @@
                                 "default": "Y is N WRT OWN and Z is U WRT OWN"
                             }
                         },
-                        "required": ["spref", "matref", "position", "orientation"]
+                        "required": ["spref", "position", "orientation"]
                     },
                     "format": "table"
                 }
