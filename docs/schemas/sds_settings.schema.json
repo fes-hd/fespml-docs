@@ -62,15 +62,15 @@
         },
         "drawDefaultRegi": {
             "type": "string",
-            "description": "Default REGI Ref for new data in the SDS Draw form"
+            "description": "Default REGI Ref for new entries in the SDS Draw form"
         },
         "drawDefaultLiby": {
             "type": "string",
-            "description": "Default LIBY Ref for new data in the SDS Draw form"
+            "description": "Default LIBY Ref for new entries in the SDS Draw form"
         },
         "drawDefaultOpt": {
             "type": "string",
-            "description": "Default option file path for new data in the SDS Draw form",
+            "description": "Default option file path for new entries in the SDS Draw form",
             "default": "%pmllib%\\sds\\drawopts\\support_drawing_a3.json"
         },
         "drawPublishPath": {
@@ -80,12 +80,12 @@
         },
         "mtoGroupMode": {
             "type": "string",
-            "description": "Mode for grouping MTO items that share the same description.",
+            "description": "Mode for grouping MTO items that have the same description.",
             "default": "PCSONLY",
             "enum": ["ON", "PCSONLY", "OFF"],
             "enumDescriptions": [
                 "Group all items.",
-                "Group items that do not have a length quantity.",
+                "Group only items whose quantity is not length-based.",
                 "Do not group items."
             ]
         },
@@ -105,17 +105,17 @@
                     },
                     "pcs": {
                         "type": "string",
-                        "description": "Item quantity",
+                        "description": "PML expression that provides the item quantity",
                         "default": "1"
                     },
                     "length": {
                         "type": "string",
-                        "description": "Item length",
+                        "description": "PML expression that provides the item length",
                         "default": "0mm"
                     },
                     "weight": {
                         "type": "string",
-                        "description": "PML expression to obtain the item's weight",
+                        "description": "PML expression that provides the item weight",
                         "default": "NWEI"
                     },
                     "labpos": {
