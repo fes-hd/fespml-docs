@@ -2,7 +2,7 @@
 
 ## Requirements
 
-The sample framework data uses the steelwork catalog, spec, and property data from the databases in the AVEVA **ACP** Project. To use the sample framework, include the following databases in your project:
+The sample framework data uses the steelwork catalog, spec, and property data from the databases in the AVEVA **ACP** project. To use the sample framework, include the following databases in your project:
 
 | Name                     | DB No. | Description                                            |
 | ------------------------ | ------ | ------------------------------------------------------ |
@@ -28,7 +28,7 @@ To prepare the sample catalog for your project, follow these steps:
 
    ![Confirm](_images/setup_confirm.png)
 
-5. Make sure that _/SDS-CATA_ and _/SDS-SPWL_ have been created.
+5. Make sure that `/SDS-CATA` and `/SDS-SPWL` have been created.
 
    ![New Elements](_images/setup_new_cata_spec.png)
 
@@ -50,6 +50,6 @@ To prepare the sample drawing template library for your project, follow these st
 
    ![Confirm](_images/setup_confirm.png)
 
-5. Make sure that _/FES-LIBRARIES_ and _/FES-PENSTYLES_ have been created.
+5. Make sure that `/FES-LIBRARIES` and `/FES-PENSTYLES` have been created.
 
    ![New Elements](_images/setup_new_dept_stylwl.png)
