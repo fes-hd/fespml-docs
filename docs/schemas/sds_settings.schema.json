@@ -10,7 +10,7 @@
         },
         "zoneCondition": {
             "type": "string",
-            "description": "Logical expression that ZONE must satisfy for support creation"
+            "description": "Logical expression that determines whether each ZONE is used for support creation"
         },
         "volmSuffix": {
             "type": "string",
@@ -80,7 +80,7 @@
         },
         "mtoGroupMode": {
             "type": "string",
-            "description": "Mode for grouping MTO items that have the same description.",
+            "description": "Mode for grouping MTO items that have the same description",
             "default": "PCSONLY",
             "enum": ["ON", "PCSONLY", "OFF"],
             "enumDescriptions": [

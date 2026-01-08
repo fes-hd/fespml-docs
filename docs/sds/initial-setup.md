@@ -5,7 +5,7 @@
 The sample framework data uses the steelwork catalog, spec, and property data from the databases in the AVEVA **ACP** project. To use the sample framework, include the following databases in your project:
 
 | Name                     | DB No. | Description                                            |
-| ------------------------ | ------ | ------------------------------------------------------ |
+| ------------------------ | -----: | ------------------------------------------------------ |
 | MASTER/STL_PROFILE_CATA  | 250700 | AVEVA Master Steelwork Profile Catalogue database      |
 | MASTER/STL_PROFILE_SPECS | 250701 | AVEVA Master Steelwork Profile Specifications database |
 | MASTER/STL_PROP          | 251709 | AVEVA E3D Structural Design Property database          |

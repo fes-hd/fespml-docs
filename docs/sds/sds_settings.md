@@ -16,7 +16,7 @@ If the file does not exist, it is automatically created in the project's default
 
 ### zoneCondition
 
-A logical expression that ZONE must satisfy for support creation.
+A logical expression that determines whether each ZONE is used for support creation.
 
 Default:
 
