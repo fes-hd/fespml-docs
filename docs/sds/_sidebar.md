@@ -5,4 +5,4 @@
     - [Initial Setup](initial-setup.md)
     - [Quick Start](quick-start.md)
   - **Customization**
-    - [Configuration File](sds_settings.md)
+    - [Configuration File](settings.md)
