@@ -58,7 +58,7 @@ SHLB Name suffix for overlay sheets of support drawings.
 
 ### catePurpose
 
-CATE Purpose value indicates that this is a support catalog. When you click **Generate Spec** on the **SDS** tab, SDS gathers the `CATE` and `STCA` elements whose purpose matches this value. SDS then uses them to update the SPEC elements defined in [`specAnci`](#specanci) and [`specJoin`](#specjoin).
+CATE Purpose value indicates that this is a support catalog. When you click **Generate Spec** on the **SDS** tab, SDS gathers the `CATE` and `STCA` elements whose purpose matches this value. SDS then uses them to update the SPEC elements defined in [specAnci](#specanci) and [specJoin](#specjoin).
 
 **Default:**
 
@@ -151,7 +151,7 @@ This means SDS draws the support model and any touched elements found under the 
 
 Default REGI Ref for new entries in the **SDS Draw** form.
 
-![REGI Column](_images/conf_default_regi.png)
+![REGI Column](_images/settings_default_regi.png)
 
 **Example:**
 
@@ -165,7 +165,7 @@ When you append a new row in the **SDS Draw** form, SDS automatically sets the v
 
 Default LIBY Ref for new entries in the **SDS Draw** form.
 
-![LIBY Column](_images/conf_default_liby.png)
+![LIBY Column](_images/settings_default_liby.png)
 
 **Example:**
 
@@ -179,7 +179,7 @@ When you append a new row in the **SDS Draw** form, SDS automatically sets the v
 
 Default draw option file path for new entries in the **SDS Draw** form.
 
-![Option File Column](_images/conf_default_opt.png)
+![Option File Column](_images/settings_default_opt.png)
 
 **Example:**
 
