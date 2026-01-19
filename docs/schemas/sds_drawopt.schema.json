@@ -15,12 +15,12 @@
         },
         "plotStyle": {
             "type": "string",
-            "description": "PLTSTY Ref used when generating the PDF",
+            "description": "PLTSTY Ref used when exporting a support drawing to PDF",
             "default": "/FES-Monochrome"
         },
         "drawProcedures": {
             "type": "array",
-            "description": "PML commands for creating a support drawing",
+            "description": "PML commands for generating a support drawing",
             "items": {
                 "type": "string"
             },
@@ -40,12 +40,12 @@
         },
         "mtoNoteName": {
             "type": "string",
-            "description": "Search pattern for the NOTE element used to create the MTO table",
+            "description": "Name pattern used to find the NOTE element to create the MTO table",
             "default": "*/MTO"
         },
         "mtoSheetPos": {
             "type": "string",
-            "description": "XY Position of the bottom-left corner of the MTO table",
+            "description": "XY Position of the reference corner of the MTO table on the sheet",
             "default": "0mm 0mm"
         },
         "mtoUpToDown": {
@@ -55,7 +55,7 @@
         },
         "mtoDivisionNum": {
             "type": "integer",
-            "description": "Number of columns the MTO table is divided into",
+            "description": "Number of columns to split the MTO table into",
             "default": 1,
             "minimum": 1
         },
@@ -150,7 +150,7 @@
         },
         "viewDefs": {
             "type": "array",
-            "description": "View settings grouped by VIEW name",
+            "description": "View settings specified by VIEW element name",
             "items": {
                 "$ref": "#/definitions/view",
                 "defaultProperties": ["name", "looking"]
@@ -159,12 +159,12 @@
         },
         "detailsOlayName": {
             "type": "string",
-            "description": "OLAY name suffix for detail views",
+            "description": "OLAY name suffix used for detail views",
             "default": "DETAIL"
         },
         "detailsXYScale": {
             "type": "string",
-            "description": "XYScale for OLAY elements",
+            "description": "XYScale applied to OLAY elements",
             "default": "1.0 1.0"
         },
         "detailsSheetPos": {
@@ -263,7 +263,7 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "Search pattern for the VIEW element name"
+                    "description": "Name pattern for the VIEW element name"
                 },
                 "looking": {
                     "type": "string",
@@ -317,7 +317,7 @@
                 },
                 "dimPltxtLevel": {
                     "type": "string",
-                    "description": "LDIM Pltxt value used to indicating elevation",
+                    "description": "LDIM Pltxt value used to indicate elevation",
                     "default": "EL #POSU+<WRT /*>"
                 },
                 "labLayerPurp": {
@@ -337,7 +337,7 @@
                 },
                 "labGrid": {
                     "type": "string",
-                    "description": "SYTM Ref used for grid line name balloon",
+                    "description": "SYTM Ref used for grid ID balloon",
                     "default": "/FES-GRID-ID"
                 },
                 "labPipeName": {
@@ -357,17 +357,17 @@
                 },
                 "labWeldLeft": {
                     "type": "string",
-                    "description": "SYTM Ref used for left-hand weld symbol",
+                    "description": "SYTM Ref used for left-leader weld symbol",
                     "default": "/FES-FIELD-WELD-L"
                 },
                 "labWeldRight": {
                     "type": "string",
-                    "description": "SYTM Ref used for right-hand weld symbol",
+                    "description": "SYTM Ref used for right-leader weld symbol",
                     "default": "/FES-FIELD-WELD-R"
                 },
                 "labHoleCLines": {
                     "type": "string",
-                    "description": "SYTM Ref used for centerlines of holes",
+                    "description": "SYTM Ref used for hole centerlines",
                     "default": "/FES-CROSS-HAIRS"
                 },
                 "rRules": {
