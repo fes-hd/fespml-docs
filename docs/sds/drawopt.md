@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Draw Option JSON file defines how SDS generates support drawings. In the **SDS Draw** form, each support is assigned an option file in the list. When you generate or update a support drawing, SDS loads the option file assigned to that support and applies its settings.
+A Draw Option File is a JSON file that defines how SDS generates support drawings. In the **SDS Draw** form, each support is assigned an option file in the list. When you generate or update a support drawing, SDS loads the option file assigned to that support and applies its settings.
 
 ![Option File](_images/settings_default_opt.png)
 
