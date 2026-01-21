@@ -70,7 +70,7 @@ This means that if the catalog's purpose is set to `SDS`, SDS treats it as a sup
 
 ### assyTagAttrib
 
-The attribute name used to store the ancillary data tag. When you create a new ancillary, SDS sets the attribute named by this value to the ancillary data tag.
+The attribute name used to store the ancillary data tag or framework data tag. When you create a new ancillary or framework element, SDS sets the attribute named by this value to the data tag.
 
 **Default:**
 
@@ -78,7 +78,7 @@ The attribute name used to store the ancillary data tag. When you create a new a
 "assyTagAttrib": "FUNC"
 ```
 
-This means SDS stores the ancillary data tag in the `FUNC` attribute of the ancillary element.
+This means SDS stores the data tag in the `FUNC` attribute.
 
 ### assyTagPrelim
 
