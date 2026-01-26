@@ -48,7 +48,7 @@ Before running the list, SDS sets `!!SDSDRAWER` for the current SUPPO element. Y
 - `.DrawDetailOlays()` - Draw detail views.
 
 > [!NOTE]
-> For methods with `!vorder`, pass `ALL` or a space-separated list of looking values to choose the target VIEW elements and their processing order.
+> For methods with `!vorder`, pass `ALL` or a space-separated list of `looking` values to choose the target VIEW elements and their processing order.
 > `ALL` uses the same order as the entries in `viewDefs`.
 
 **Example:**
