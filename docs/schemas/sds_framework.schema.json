@@ -10,7 +10,7 @@
         },
         "tag": {
             "type": "string",
-            "description": "Tag name used to identify this data file"
+            "description": "Unique tag name used to identify this data file"
         },
         "description": {
             "type": "string",
@@ -18,7 +18,7 @@
         },
         "imgfile": {
             "type": "string",
-            "description": "Path to image file displayed in the framework selection form"
+            "description": "Path to image file shown in the framework selection form"
         },
         "pickFor": {
             "type": "string",

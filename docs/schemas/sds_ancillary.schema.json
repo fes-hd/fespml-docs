@@ -10,7 +10,7 @@
         },
         "tag": {
             "type": "string",
-            "description": "Tag name used to identify this data file"
+            "description": "Unique tag name used to identify this data file"
         },
         "description": {
             "type": "string",
@@ -18,7 +18,7 @@
         },
         "imgfile": {
             "type": "string",
-            "description": "Path to image file displayed in the ancillary selection form"
+            "description": "Path to image file shown in the ancillary selection form"
         },
         "condition": {
             "type": "string",
@@ -52,8 +52,9 @@
                         "description": "SOLI Ref specifying the material of the component"
                     },
                     "insu": {
-                        "type": "string",
-                        "description": "SPEC Ref specifying the insulation of the component"
+                        "type": "boolean",
+                        "description": "If true, setting the same insulation spec as the picked piping component to this component",
+                        "default": false
                     },
                     "reduOffset": {
                         "type": "string",
@@ -117,17 +118,17 @@
                     },
                     "open": {
                         "type": "string",
-                        "description": "Length of steelwork end not connected to another steelwork",
+                        "description": "Length for steelwork not connected to another steelwork",
                         "default": "150mm"
                     },
                     "close": {
                         "type": "string",
-                        "description": "Length of steelwork end connected to another steelwork",
+                        "description": "Length for steelwork connected to another steelwork",
                         "default": "150mm"
                     },
                     "angle": {
                         "type": "string",
-                        "description": "Length of steelwork end connected to another steelwork with angled cut",
+                        "description": "Length for steelwork connected to another steelwork with an angled cut",
                         "default": "150mm"
                     }
                 },
@@ -143,11 +144,11 @@
                 "properties": {
                     "spref": {
                         "type": "string",
-                        "description": "SPCO Ref"
+                        "description": "SPCO Ref of the steelwork profile"
                     },
                     "dist": {
                         "type": "string",
-                        "description": "Distance from the edge to the bolt hole on the steelwork",
+                        "description": "Distance from the steelwork justification line (Jusline) to the bolting position",
                         "default": "25mm"
                     }
                 },
