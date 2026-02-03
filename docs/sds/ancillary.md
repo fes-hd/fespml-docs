@@ -63,7 +63,7 @@ Type of the ancillary owner element to create in the model.
 - `SUPC` - For a general support component
 - `TRUNNI` - For a trunnion support component
 - `LUG` - For a lug support component
-- `HANG` - For a pipe hange
+- `HANG` - For a pipe hanger
 
 **Example:**
 
