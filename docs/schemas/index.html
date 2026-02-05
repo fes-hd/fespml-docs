@@ -54,7 +54,7 @@
         };
         editor = new JSONEditor(document.querySelector("#editor-container"), config);
         editor.on("change", () => {
-          editor.getEditor("root.$schema")?.setValue(schema_json.href);
+          editor.getEditor("root.$schema")?.setValue("https://raw.githubusercontent.com/fes-hd/fespml-docs/refs/heads/main/docs/schemas/" + location.search.substring(1) + ".schema.json");
         });
       })();
 
