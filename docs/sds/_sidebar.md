@@ -11,6 +11,7 @@
   - **Customization**
     - [Configuration File](settings.md)
     - [Ancillary Data File](ancillary.md)
+    - [Framework Data File](framework.md)
     - [Draw Option File](drawopt.md)
   - **JSON Editors**
     - [SDS Settings](schemas/?sds_settings ":ignore")

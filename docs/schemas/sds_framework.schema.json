@@ -28,30 +28,30 @@
         },
         "vertical": {
             "type": "boolean",
-            "description": "If true, this framework is for vertical piping.",
+            "description": "Whether this framework is intended for vertical piping",
             "default": false
         },
         "minBore": {
             "type": "string",
-            "description": "Minimum bore size of the ancillary that can be attached to the framework",
+            "description": "Minimum bore size of an ancillary that can be attached to this framework",
             "default": "0mm"
         },
         "maxBore": {
             "type": "string",
-            "description": "Maximum bore size of the ancillary that can be attached to the framework",
+            "description": "Maximum bore size of an ancillary that can be attached to this framework",
             "default": "1200mm"
         },
         "endPrepLeft": {
             "$ref": "#/definitions/endprep",
-            "description": "End preparation type for the left side of the bar section"
+            "description": "End preparation type for the left end of the bar section"
         },
         "endPrepRight": {
             "$ref": "#/definitions/endprep",
-            "description": "End preparation type for the right side of the bar section"
+            "description": "End preparation type for the right end of the bar section"
         },
         "endExtendOffset": {
             "type": "string",
-            "description": "Offset applied when auto-stretching end of the bar section",
+            "description": "Extra offset applied when auto-extending end of the bar section",
             "default": "0mm"
         },
         "bar": {
@@ -140,7 +140,7 @@
                 },
                 "side": {
                     "type": "string",
-                    "description": "Specifies the side of the bar section to which the leg section is connected.",
+                    "description": "(Leg only) Specifies which side of the bar section the leg section connects to.",
                     "default": "LEFT",
                     "enum": ["LEFT", "RIGHT", "MID"],
                     "enumDescriptions": [
@@ -151,20 +151,20 @@
                 },
                 "spref": {
                     "type": "string",
-                    "description": "SPCO Ref specifying the steel profile of this GENSEC"
+                    "description": "SPCO Ref specifying the steel profile for this GENSEC"
                 },
                 "matref": {
                     "type": "string",
-                    "description": "SOLI Ref specifying the material of this GENSEC"
+                    "description": "SOLI Ref specifying the material for this GENSEC"
                 },
                 "jusline": {
                     "type": "string",
-                    "description": "P-Line name used for this GENSEC justification",
+                    "description": "P-Line name used as the justification line for this GENSEC",
                     "default": "NA"
                 },
                 "lmirror": {
                     "type": "boolean",
-                    "description": "If true, this GENSEC shape is mirrored",
+                    "description": "Whether the GENSEC is created as a mirrored shape",
                     "default": false
                 },
                 "ydir": {
@@ -173,21 +173,21 @@
                 },
                 "zdir": {
                     "type": "string",
-                    "description": "Direction along which the leg section runs"
+                    "description": "(Leg only) Direction along which the leg section runs"
                 },
                 "xoffset": {
                     "type": "string",
-                    "description": "X offset from the GENSEC start position",
+                    "description": "(Leg only) X offset from the GENSEC start position",
                     "default": "0mm"
                 },
                 "yoffset": {
                     "type": "string",
-                    "description": "Y offset from the GENSEC start position",
+                    "description": "(Leg only) Y offset from the GENSEC start position",
                     "default": "0mm"
                 },
                 "zoffset": {
                     "type": "string",
-                    "description": "Z offset from the GENSEC start position",
+                    "description": "(Leg only) Z offset from the GENSEC start position",
                     "default": "0mm"
                 },
                 "postCommands": {
@@ -226,15 +226,15 @@
                 },
                 "spref": {
                     "type": "string",
-                    "description": "SPCO Ref specifying the joint catalog of this FIXING"
+                    "description": "SPCO Ref specifying the joint catalog for this FIXING"
                 },
                 "matref": {
                     "type": "string",
-                    "description": "SOLI Ref specifying the material of this FIXING"
+                    "description": "SOLI Ref specifying the material for this FIXING"
                 },
                 "orientation": {
                     "type": "string",
-                    "description": "Orientation of this FIXING",
+                    "description": "Orientation applied to this FIXING",
                     "default": "Y is N WRT OWN and Z is U WRT OWN"
                 },
                 "cutback": {
@@ -258,21 +258,21 @@
                         "properties": {
                             "spref": {
                                 "type": "string",
-                                "description": "SPCO Ref specifying the member joint catalog of this FIXING"
+                                "description": "SPCO Ref specifying the member joint catalog for this FIXING"
                             },
                             "matref": {
                                 "type": "string",
-                                "description": "SOLI Ref specifying the material of this FIXING",
+                                "description": "SOLI Ref specifying the material for this FIXING",
                                 "default": null
                             },
                             "position": {
                                 "type": "string",
-                                "description": "Position of this FIXING",
+                                "description": "Position for this FIXING",
                                 "default": "E 0mm N 0mm U 0mm WRT OWN"
                             },
                             "orientation": {
                                 "type": "string",
-                                "description": "Orientation of this FIXING",
+                                "description": "Orientation for this FIXING",
                                 "default": "Y is N WRT OWN and Z is U WRT OWN"
                             }
                         },
