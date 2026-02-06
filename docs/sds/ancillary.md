@@ -2,7 +2,7 @@
 
 ## Introduction
 
-An Ancillary Data File is a JSON file that defines how SDS creates an ancillary item attached to piping. Ancillary Data Files are stored in the directory specified by `assyAnciPath` in the [Configuration File](settings.md).
+An Ancillary Data File is a JSON file that defines how SDS creates an ancillary item attached to piping. Ancillary Data Files are stored in the directory specified by [assyAnciPath](settings.md#assyancipath) in the Configuration File.
 
 ## Properties
 
