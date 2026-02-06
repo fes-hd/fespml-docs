@@ -23,7 +23,8 @@ To create a new SUPPO element, follow these steps:
 1. On the **SDS** tab, click **Ancillary**.
 2. In the dialog that opens, choose an ancillary type, and then click **OK**.
 
-> [!TIP] The first time you use an SDS function after launching E3D Design, SDS takes time to load.
+> [!TIP]
+> The first time you use an SDS function after launching E3D Design, SDS takes time to load.
 
 ### Create Support Framework
 
@@ -43,7 +44,8 @@ To store DRWG elements for support drawings and OVER elements for detail views, 
 
 1. Open the **Draw** module or open the **Design** module with **Draw functionality in Model** enabled.
 
-   > [!TIP] For further information about **Draw functionality in Model**, refer to the [article](https://docs.aveva.com/bundle/e3d-design/page/1048435.html) in AVEVA Documentation.
+   > [!TIP]
+   > For further information about **Draw functionality in Model**, refer to the [article](https://docs.aveva.com/bundle/e3d-design/page/1048435.html) in AVEVA Documentation.
 
 2. On the **Home** or **Draw** tab, click **Open**.
 
