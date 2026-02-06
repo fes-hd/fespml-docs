@@ -28,7 +28,9 @@ This means that if the ZONE's purpose is set to `SUPP` or `SDS`, SDS treats it a
 
 ### volmSuffix
 
-VOLM Name suffix to determine ZONE where to create a support.
+VOLM name suffix used to determine the ZONE where SDS creates a SUPPO.
+
+When you create a new support, if the picked piping component is within the VOLUME of a VOLM element, SDS creates the SUPPO under the ZONE whose name is the VOLM name with `volmSuffix` removed.
 
 **Default:**
 
