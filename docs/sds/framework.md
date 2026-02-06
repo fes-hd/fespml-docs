@@ -287,7 +287,7 @@ Y direction for the SPINE of this GENSEC. Changing `ydir` rotates the GENSEC ori
 (Leg only) X offset from the GENSEC start position.
 
 > [!TIP]
-> The X/Y/Z directions match the axis arrows shown in the 3D view while the Support Editor form is open.
+> The X/Y/Z directions match the axis arrows shown in the 3D view while the **SDS Support Editor** form is open.
 >
 > ![XYZ](_images/framework_xyz.png)
 
