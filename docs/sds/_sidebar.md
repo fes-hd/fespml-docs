@@ -4,10 +4,10 @@
   - **Getting Started**
     - [Initial Setup](initial-setup.md)
     - [Quick Start](quick-start.md)
-      <!-- - **Usage** -->
-        <!-- - [SDS Tab](#) -->
-        <!-- - [Support Editor Form](#) -->
-        <!-- - [Draw Form](#) -->
+  - **Usage**
+    - [SDS Menu Tab](sdstab.md)
+    - [Support Editor Form](sdsedit.md)
+    - [Draw Form](sdsdraw.md)
   - **Customization**
     - [Configuration File](settings.md)
     - [Ancillary Data File](ancillary.md)

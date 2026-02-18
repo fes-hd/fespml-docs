@@ -4,8 +4,7 @@
 
 ### Requirements
 
-- **AVEVA E3D Design 3.1.9 or later** is recommended for using the macros.
-- The macros are currently not supported in **AVEVA Unified Engineering** (E3D 4.x.x).
+**AVEVA E3D Design 3.1.9 or later** is recommended for using the macros.
 
 ### Installation
 
