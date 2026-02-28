@@ -32,7 +32,7 @@ To create a new SUPPO element, follow these steps:
 
 To create a support framework, follow these steps:
 
-1. In the **SDS Support Editor** form, click ![Add Framework](_images/ui_add_frmw.png ":no-zoom") **Add Framework**.
+1. In the **SDS Support Editor** form, click ![Add Framework](_images/ui_add_framework.png ":no-zoom") **Add Framework**.
 2. In the graphical view, pick the position where the support will be fixed.
 3. In the dialog that opens, choose a framework type, and then click **OK**.
 
