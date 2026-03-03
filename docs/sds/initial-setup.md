@@ -16,7 +16,7 @@ To prepare the sample catalog for your project, follow these steps:
 
 1. Open the **Paragon** module.
 
-2. Set the CE to a top-level element so that the sample CATA and SPWL will be created immediately after it.
+2. Set CE to a top-level element so that the sample CATA and SPWL will be created immediately after it.
 
    ![Set CE](_images/setup_set_ce_to_cata.png)
 
@@ -38,7 +38,7 @@ To prepare the sample drawing template library for your project, follow these st
 
 1. Open the **Draw** module.
 
-2. Set the CE to a top-level element so that the sample DEPT and STYLWL will be created immediately after it.
+2. Set CE to a top-level element so that the sample DEPT and STYLWL will be created immediately after it.
 
    ![Set CE](_images/setup_set_ce_to_dept.png)
 
