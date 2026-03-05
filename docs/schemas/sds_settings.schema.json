@@ -36,15 +36,23 @@
             "type": "string",
             "description": "Ancillary data tag value used to indicate a preliminary"
         },
-        "assyAnciPath": {
-            "type": "string",
-            "description": "Path to directory where ancillary data JSON files are stored",
-            "default": "%pmllib%\\sds\\ancillaries"
+        "assyAnciPaths": {
+            "type": "array",
+            "description": "Paths to directories where framework data JSON files are stored",
+            "items": {
+                "type": "string"
+            },
+            "default": ["%pmllib%\\sds\\ancillaries"],
+            "format": "table"
         },
-        "assyFrmwPath": {
-            "type": "string",
-            "description": "Path to directory where framework data JSON files are stored",
-            "default": "%pmllib%\\sds\\frameworks"
+        "assyFrmwPaths": {
+            "type": "array",
+            "description": "Paths to directories where ancillary data JSON files are stored",
+            "items": {
+                "type": "string"
+            },
+            "default": ["%pmllib%\\sds\\frameworks"],
+            "format": "table"
         },
         "specAnci": {
             "type": "string",
@@ -152,8 +160,8 @@
         }
     },
     "required": [
-        "assyAnciPath",
-        "assyFrmwPath",
+        "assyAnciPaths",
+        "assyFrmwPaths",
         "specAnci",
         "specJoin",
         "drawPublishPath",
@@ -161,8 +169,8 @@
     ],
     "defaultProperties": [
         "$schema",
-        "assyAnciPath",
-        "assyFrmwPath",
+        "assyAnciPaths",
+        "assyFrmwPaths",
         "specAnci",
         "specJoin",
         "suppoTouchHier",

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A Framework Data File is a JSON file that defines how SDS creates a support framework. Framework Data Files are stored in the directory specified by [assyFrmwPath](settings.md#assyfrmwpath) in the Configuration File.
+A Framework Data File is a JSON file that defines how SDS creates a support framework. Framework Data Files are stored in the directories specified by [assyFrmwPaths](settings.md#assyfrmwpaths) in the Configuration File.
 
 ## Properties
 

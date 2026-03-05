@@ -94,27 +94,27 @@ The ancillary data tag value used to indicate a preliminary. When you create a p
 
 This means the ancillary data tagged as `PRELIM` is used for preliminary ancillary elements.
 
-### assyAnciPath
+### assyAnciPaths
 
-Path to the directory where ancillary data JSON files are stored.
+Paths to the directories where ancillary data JSON files are stored.
 
 **Example:**
 
 ```json
-"assyAnciPath": "%pmllib%\\sds\\ancillaries"
+"assyAnciPaths": ["%pmllib%\\sds\\ancillaries"]
 ```
 
 > [!TIP]
-> To specify a path, you can use environment variables enclosed in percent signs (%).
+> For each path, you can use environment variables enclosed in percent signs (%).
 
-### assyFrmwPath
+### assyFrmwPaths
 
-Path to the directory where framework data JSON files are stored.
+Paths to the directories where framework data JSON files are stored.
 
 **Example:**
 
 ```json
-"assyFrmwPath": "%pmllib%\\sds\\frameworks"
+"assyFrmwPaths": ["%pmllib%\\sds\\frameworks"]
 ```
 
 ### specAnci
