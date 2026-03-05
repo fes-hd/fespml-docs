@@ -149,6 +149,16 @@ Hierarchies (and below) to search for elements touched by the support. When you 
 
 This means SDS draws the support model and any touched elements found under the `/SITE-A`, `/SITE-B`, and `/SITE-C` hierarchies.
 
+### drawDatabase
+
+Path to the database file used by the **SDS Draw** form.
+
+**Example:**
+
+```json
+"drawDatabase": "%apsdflts%\\sds_draw.db"
+```
+
 ### drawDefaultRegi
 
 Default REGI Ref for new entries in the **SDS Draw** form.

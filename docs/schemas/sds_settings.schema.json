@@ -68,6 +68,10 @@
             "type": "string",
             "description": "Hierarchies (and below) to search for elements touched by the support"
         },
+        "drawDatabase": {
+            "type": "string",
+            "description": "Database file path for SDS Draw form"
+        },
         "drawDefaultRegi": {
             "type": "string",
             "description": "Default REGI Ref for new entries in the SDS Draw form"
