@@ -242,6 +242,16 @@ SOLI Ref specifying the material for this GENSEC.
 "matref": "/E3DSD_S275JR"
 ```
 
+### shop (Section)
+
+Shop/Site flag for this GENSEC. This flag affects where the field weld symbol is placed on the support drawing.
+
+**Example:**
+
+```json
+"shop": false
+```
+
 ### jusline
 
 P-Line name used as the justification line for this GENSEC.
@@ -360,6 +370,7 @@ SDS checks entries from top to bottom and uses the **first** entry whose `condit
     "condition": "PURP OF ZONE eq 'CIV'",
     "spref": "/SDS-JOIN/SDS-BP-BOLT2X-C100",
     "matref": "/E3DSD_S275JR",
+    "shop": false,
     "orientation": "Y is E WRT OWN and Z is U WRT OWN",
     "cutback": "RPRO PTHK",
     "members": [
@@ -420,6 +431,16 @@ SOLI Ref specifying the material for this FIXING.
 
 ```json
 "matref": "/E3DSD_S275JR"
+```
+
+### shop (Joint)
+
+Shop/Site flag for this FIXING. This flag affects where the field weld symbol is placed on the support drawing.
+
+**Example:**
+
+```json
+"shop": false
 ```
 
 ### orientation

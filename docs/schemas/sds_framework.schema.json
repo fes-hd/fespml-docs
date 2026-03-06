@@ -157,6 +157,11 @@
                     "type": "string",
                     "description": "SOLI Ref specifying the material for this GENSEC"
                 },
+                "shop": {
+                    "type": "boolean",
+                    "description": "Shop/Site flag for this GENSEC",
+                    "default": true
+                },
                 "jusline": {
                     "type": "string",
                     "description": "P-Line name used as the justification line for this GENSEC",
@@ -232,6 +237,11 @@
                     "type": "string",
                     "description": "SOLI Ref specifying the material for this FIXING"
                 },
+                "shop": {
+                    "type": "boolean",
+                    "description": "Shop/Site flag for this FIXING",
+                    "default": true
+                },
                 "orientation": {
                     "type": "string",
                     "description": "Orientation applied to this FIXING",
@@ -286,6 +296,7 @@
                 "condition",
                 "spref",
                 "matref",
+                "shop",
                 "orientation",
                 "cutback",
                 "members"
