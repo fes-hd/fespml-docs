@@ -6,17 +6,20 @@ The **SDS** tab in the ribbon menu provides access to general SDS functions.
 
 ## Create
 
+> [!TIP]
+> The name of the new SUPPO is assigned automatically based on the naming rules of the existing SUPPO elements in the ZONE.
+
 ### Preliminary
 
-Creates a new SUPPO element with a preliminary ancillary attached to the piping component you pick. If the picked piping component is within the VOLUME of a VOLM element, the SUPPO element is created under the ZONE whose name is the VOLM name with the `/VOLM` suffix removed.
+Creates a new SUPPO element with a preliminary ancillary attached to the piping component you pick. If the picked piping component is within the VOLUME of a VOLM element, the SUPPO is created under the ZONE whose name is the VOLM name with the `/VOLM` suffix removed.
 
 ### Ancillary
 
-Creates a new SUPPO element with an ancillary attached to the piping component you pick. If the picked piping component is within the VOLUME of a VOLM element, the SUPPO element is created under the ZONE whose name is the VOLM name with the `/VOLM` suffix removed.
+Creates a new SUPPO element with an ancillary attached to the piping component you pick. If the picked piping component is within the VOLUME of a VOLM element, the SUPPO is created under the ZONE whose name is the VOLM name with the `/VOLM` suffix removed.
 
 ### Empty Support
 
-Creates a new SUPPO element only. The SUPPO element is created under the current ZONE with purpose `SUPP` or `SDS`.
+Creates a new SUPPO element only. The SUPPO is created under the current ZONE element with purpose `SUPP` or `SDS`.
 
 ## Modify
 
@@ -34,7 +37,7 @@ Deletes the current SUPPO element.
 
 ### Sort Supports
 
-Sorts the SUPPO elements under the current ZONE by name.
+Sorts the SUPPO elements under the current ZONE element by name.
 
 ### Draw
 
