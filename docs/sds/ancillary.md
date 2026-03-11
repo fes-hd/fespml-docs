@@ -75,7 +75,7 @@ Type of the ancillary owner element to create in the model.
 
 List of component definitions that SDS uses to build the ancillary. Each entry defines one component to create, and SDS creates the components in order.
 
-When SDS creates an ancillary, it first creates the owner element with the type specified by `owntype`, then creates each `components` entry as one child element under the owner. SDS sets the child element’s `spref` by selecting an SPCO from the SPEC specified by `spec` that matches `gtype`, `stype`, and the bore of the picked piping component. After each child element is created, SDS runs `postCommands` (if specified).
+When SDS creates an ancillary, it first creates the owner element with the type specified by `owntype`, then creates each `components` entry as one member element under the owner. SDS sets the member element’s `spref` by selecting an SPCO from the SPEC specified by `spec` that matches `gtype`, `stype`, and the bore of the picked piping component. After each member element is created, SDS runs `postCommands` (if specified).
 
 **Properties:**
 

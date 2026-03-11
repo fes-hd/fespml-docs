@@ -44,7 +44,7 @@ Path to the image file shown in the framework selection form.
 
 ### pickFor
 
-The direction from the framework origin toward the surface where the framework will be attached. If the picked direction does not match `pickFor`, SDS sets **Available** to `False` in the framework selection form.
+The direction from the support origin toward the surface where the framework will be attached. If the picked direction does not match `pickFor`, SDS sets **Available** to `False` in the framework selection form.
 
 **Options:**
 
@@ -204,7 +204,7 @@ Suffix appended to the parent element name to form the GENSEC name.
 "suffix": "BAR"
 ```
 
-This means SDS names the GENSEC as `<SUPPO Name>/STRU-<suffix>`.
+This means SDS names the GENSEC as `<SUPPO Name>/STRU-BAR`.
 
 ### side
 

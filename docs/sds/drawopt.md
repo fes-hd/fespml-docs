@@ -32,7 +32,7 @@ PLTSTY Ref used when exporting a support drawing to PDF. SDS uses this plot styl
 
 PML command list used to generate or update a support drawing. SDS runs the commands **from top to bottom**.
 
-Before running the list, SDS sets `!!SDSDRAWER` for the current SUPPO element. You can customize the workflow with your own PML commands, or simply call the built-in methods in order.
+For each SUPPO processed by SDS, `!!SDSDRAWER` is made available for that SUPPO before the command list runs. In the command list, you can use the built-in methods of `!!SDSDRAWER` and also add your own PML commands as needed.
 
 **Available methods:**
 

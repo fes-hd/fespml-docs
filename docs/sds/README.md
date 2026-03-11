@@ -1,4 +1,4 @@
-# SDS <!-- {docsify-ignore-all} -->
+# SDS
 
 **SDS** is a macro for faster modeling and drawing of piping supports.
 

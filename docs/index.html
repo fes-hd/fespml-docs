@@ -16,6 +16,10 @@
       name: 'FES PML Macro',
       themeColor: '#3F51B5',
       loadNavbar: false,
+      nameLink: {
+        '/ja/': '#/ja/',
+        '/': '#/',
+      },
       loadSidebar: true,
       subMaxLevel: 6,
       auto2top: true,
@@ -26,12 +30,18 @@
       },
       plugins: [
         function pageFooter(hook, vm) {
-          var footer = `
-            <hr/>
-            <footer>&copy; ${(new Date()).getFullYear()} Fuji Engineering Service Co., Ltd. </footer>
-          `;
+          hook.afterEach((html) => html + `<footer><hr/>&copy; ${(new Date()).getFullYear()} Fuji Engineering Service Co., Ltd. </footer>`);
+        },
+        function setLang(hook, vm) {
           hook.afterEach(function (html) {
-            return html + footer;
+            const lang = location.hash.match(/#\/(ja)\//);
+            if (lang) {
+              document.documentElement.setAttribute('lang', lang[1]);
+              return html.replace(/<img src="(.*?)\/ja\/(.*?)"/g, '<img src="$1/$2"');
+            } else {
+              document.documentElement.setAttribute('lang', 'en');
+              return html;
+            }
           });
         },
       ]

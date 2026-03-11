@@ -45,7 +45,7 @@ DRWG Name suffix for support drawings.
 **Default:**
 
 ```json
-"volmSuffix": "/DR"
+"drwgSuffix": "/DR"
 ```
 
 ### overShlbSuffix
@@ -134,7 +134,7 @@ SPEC Ref for structural joint catalogs.
 **Example:**
 
 ```json
-"specAnci": "/SDS-JOIN"
+"specJoin": "/SDS-JOIN"
 ```
 
 ### suppoTouchHier
