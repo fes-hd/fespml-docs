@@ -2,13 +2,14 @@
 
 ## 必須条件
 
-サンプルのフレームワークデータは、AVEVA **ACP** プロジェクトのデータベースからの鉄骨カタログ、仕様、およびプロパティデータを使用します。サンプルフレームワークを使用するには、プロジェクトに以下のデータベースを含めてください：
+サンプルデータは、AVEVA **ACP** プロジェクトのデータベースに含まれる鋼構造カタログ、仕様、プロパティ、および MDS 辞書データを使用します。サンプルデータを利用するには、次のデータベースをプロジェクトに含めてください：
 
-| Name                     | DB No. | Description                                            |
-| ------------------------ | -----: | ------------------------------------------------------ |
-| MASTER/STL_PROFILE_CATA  | 250700 | AVEVA Master Steelwork Profile Catalogue database      |
-| MASTER/STL_PROFILE_SPECS | 250701 | AVEVA Master Steelwork Profile Specifications database |
-| MASTER/STL_PROP          | 251709 | AVEVA E3D Structural Design Property database          |
+| Name                     | DB No. | Description                                                |
+| ------------------------ | -----: | ---------------------------------------------------------- |
+| MASTER/MDSDICT           |   7323 | AVEVA Master Multi-Discipline Supports Dictionary database |
+| MASTER/STL_PROFILE_CATA  | 250700 | AVEVA Master Steelwork Profile Catalogue database          |
+| MASTER/STL_PROFILE_SPECS | 250701 | AVEVA Master Steelwork Profile Specifications database     |
+| MASTER/STL_PROP          | 251709 | AVEVA E3D Structural Design Property database              |
 
 ## サンプルカタログの準備
 
