@@ -262,6 +262,16 @@ P-Line name used as the justification line for this GENSEC.
 "jusline": "LBOT"
 ```
 
+### memline
+
+P-Line name used as the member line for this GENSEC.
+
+**Example:**
+
+```json
+"memline": "CMID"
+```
+
 ### lmirror
 
 Whether the GENSEC is created as a mirrored shape.

@@ -262,6 +262,16 @@ SDSがフレームワークの作成を完了した後に実行するPMLコマ�
 "jusline": "LBOT"
 ```
 
+### memline
+
+このGENSECのメンバー線となるP-Line名。
+
+**Example:**
+
+```json
+"memline": "CMID"
+```
+
 ### lmirror
 
 GENSECがミラー反転した形状で作成されるかどうか。

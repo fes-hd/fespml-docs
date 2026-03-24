@@ -167,6 +167,11 @@
                     "description": "P-Line name used as the justification line for this GENSEC",
                     "default": "NA"
                 },
+                "memline": {
+                    "type": "string",
+                    "description": "P-Line name used as the member line for this GENSEC",
+                    "default": "NA"
+                },
                 "lmirror": {
                     "type": "boolean",
                     "description": "Whether the GENSEC is created as a mirrored shape",
