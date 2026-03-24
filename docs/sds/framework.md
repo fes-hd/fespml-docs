@@ -470,7 +470,7 @@ PML commands to execute after creating the FIXING.
 **Example:**
 
 ```json
-"postCommands": ["!!ce.desp[1] = 50"]
+"postCommands": ["BY U 50mm"]
 ```
 
 ### members

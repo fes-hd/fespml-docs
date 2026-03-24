@@ -470,7 +470,7 @@ FIXING作成後に実行するPMLコマンド。
 **例:**
 
 ```json
-"postCommands": ["!!ce.desp[1] = 50"]
+"postCommands": ["BY U 50mm"]
 ```
 
 ### members
