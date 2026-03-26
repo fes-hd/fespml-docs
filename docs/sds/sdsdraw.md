@@ -26,6 +26,10 @@ If a drawing already exists, deletes it first, then regenerates the selected dra
 
 Exports the selected drawings as PDF files to the folder specified by [drawPublishPath](settings.md#drawpublishpath) in the Configuration File.
 
+### Publish as DWG
+
+Exports the selected drawings as DWG files to the folder specified by [drawPublishPath](settings.md#drawpublishpath) in the Configuration File.
+
 ### Publish MTO
 
 Exports an MTO table as a CSV file for the selected supports to the folder specified by [drawPublishPath](settings.md#drawpublishpath) in the Configuration File.

@@ -26,6 +26,10 @@
 
 選択した図面を、設定ファイル（Configuration File）の[drawPublishPath](settings.md#drawpublishpath)で指定されたフォルダにPDFファイルとしてエクスポートします。
 
+### Publish as DWG
+
+選択した図面を、設定ファイル（Configuration File）の[drawPublishPath](settings.md#drawpublishpath)で指定されたフォルダにDWGファイルとしてエクスポートします。
+
 ### Publish MTO
 
 選択したサポートのMTO（材料集計）テーブルをCSVファイルとして、設定ファイルの[drawPublishPath](settings.md#drawpublishpath)で指定されたフォルダにエクスポートします。
