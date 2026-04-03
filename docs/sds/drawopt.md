@@ -596,7 +596,7 @@ Representation rule definitions for a VIEW. SDS creates one RRUL element under t
 - `criteria` - PML expression that selects elements to which the representation rule applies.
 
 > [!NOTE]
-> In `criteria`, `$!<SUPPO>` is automatically replaced with the name of the target SUPPO element.
+> In `criteria`, `$!SUPPO` is automatically replaced with the name of the target SUPPO element.
 
 **Example:**
 
@@ -604,7 +604,7 @@ Representation rule definitions for a VIEW. SDS creates one RRUL element under t
 "rRules": [
   {
     "style": "/FES/DRA/PRJ/STYL/GEN/SUPPO/SUPPO",
-    "criteria": "$!<SUPPO>"
+    "criteria": "$!SUPPO"
   },
   {
     "style": "/FES/DRA/PRJ/STYL/GEN/SUPPO/PIPE",

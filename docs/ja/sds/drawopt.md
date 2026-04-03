@@ -594,7 +594,7 @@ VIEWの表示ルール（Representation rule）の定義。SDSは `rRules` 内�
 - `criteria` - 表示ルールが適用される要素を選択するPML式。
 
 > [!NOTE]
-> `criteria` において、`$!<SUPPO>` は対象のSUPPO要素名に自動的に置き換えられます。
+> `criteria` において、`$!SUPPO` は対象のSUPPO要素名に自動的に置き換えられます。
 
 **例:**
 
@@ -602,7 +602,7 @@ VIEWの表示ルール（Representation rule）の定義。SDSは `rRules` 内�
 "rRules": [
   {
     "style": "/FES/DRA/PRJ/STYL/GEN/SUPPO/SUPPO",
-    "criteria": "$!<SUPPO>"
+    "criteria": "$!SUPPO"
   },
   {
     "style": "/FES/DRA/PRJ/STYL/GEN/SUPPO/PIPE",
