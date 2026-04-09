@@ -8,6 +8,7 @@
     - [SDS Menu Tab](sdstab.md)
     - [Support Editor Form](sdsedit.md)
     - [Draw Form](sdsdraw.md)
+    - [SDS Global Functions](functions.md)
   - **Customization**
     - [Configuration File](settings.md)
     - [Ancillary Data File](ancillary.md)

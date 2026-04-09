@@ -4,13 +4,13 @@
 
 SDS can be customized using the configuration JSON file `sds_settings.json` in the project's defaults directory, as defined by the environment variable `%XXXDFLTS%` (where XXX is the project code).
 
-To open the configuration JSON file with your Windows default app, run the following command in the **Command Window**:
+To open the configuration JSON file with the default app in Windows, run the following command in the **Command Window**:
 
 ```pml
 !!sdssettingsopen()
 ```
 
-If the file does not exist, it is automatically created in the project's defaults directory.
+If the file does not exist, SDS automatically creates it in the project's defaults directory.
 
 ## Properties
 

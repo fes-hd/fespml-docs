@@ -8,6 +8,7 @@
     - [SDSメニュータブ](sdstab.md)
     - [サポートエディタフォーム](sdsedit.md)
     - [図面生成フォーム](sdsdraw.md)
+    - [SDSグローバル関数](functions.md)
   - **カスタマイズ**
     - [設定ファイル](settings.md)
     - [アンシラリーデータファイル](ancillary.md)
