@@ -58,6 +58,10 @@ Excel（.xlsx）ファイルからリストにデータをインポートしま�
 
 リストをExcel（.xlsx）ファイルにエクスポートします。
 
+### Open Publish Path
+
+設定ファイル（Configuration File）の[drawPublishPath](settings.md#drawpublishpath)で指定されたフォルダを開きます。
+
 ### Quit
 
 フォームを閉じます。

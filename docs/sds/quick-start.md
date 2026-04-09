@@ -23,9 +23,6 @@ To create a new SUPPO element, follow these steps:
 1. On the **SDS** tab, click **Ancillary**.
 2. In the dialog that opens, choose an ancillary type, and then click **OK**.
 
-> [!TIP]
-> The first time you use an SDS function after launching E3D Design, SDS takes time to load.
-
 ### Create Support Framework
 
 ![Create Framework](_images/start_create_frmw.gif)

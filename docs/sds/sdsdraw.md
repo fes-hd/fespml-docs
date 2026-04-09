@@ -58,6 +58,10 @@ Imports data from an Excel (.xlsx) file into the list.
 
 Exports the list to an Excel (.xlsx) file.
 
+### Open Publish Path
+
+Opens the folder specified by [drawPublishPath](settings.md#drawpublishpath) in the Configuration File.
+
 ### Quit
 
 Closes the form.

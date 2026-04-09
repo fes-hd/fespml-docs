@@ -23,9 +23,6 @@
 1. **SDS** タブで、**Ancillary** をクリックします。
 2. 開いたダイアログでアンシラリータイプを選択し、**OK** をクリックします。
 
-> [!TIP]
-> E3D Designの起動後、初めてSDSの機能を使用する際は、SDSの読み込みに時間がかかります。
-
 ### サポートフレームワークの作成
 
 ![Create Framework](_images/start_create_frmw.gif)
