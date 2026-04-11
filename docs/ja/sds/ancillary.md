@@ -173,22 +173,23 @@ SDSがアンシラリーの作成を完了した後に実行するPMLコマン�
 
 ### steelBoltGauges
 
-ボルト固定式アンシラリーのための鋼材のボルトゲージ距離（`spref`別）。各エントリは、鋼材の基準線（Jusline）からボルト固定位置までの距離を指定します。
+ボルト固定式アンシラリーのための鋼材のボルトゲージ距離（`spref`別）。各エントリは、鋼材のLBOTからボルト固定位置までの距離を指定します。
 
 ![Bolt Gauge](_images/ancillary_steel_bolt_gauge.png)
 
 **プロパティ:**
 
 - `spref` - 鋼材の断面プロファイルのSPCO Ref。
-- `dist` - 鋼材の基準線（Jusline）からボルト固定位置までの距離。
+- `xdist` - 鋼材のLBOTから鋼材カタログで見てX方向のボルト固定位置までの距離。
+- `ydist` - 鋼材のLBOTから鋼材カタログで見てY方向のボルト固定位置までの距離。
 
 **例:**
 
 ```json
 "steelBoltGauges": [
-  { "spref": "/BS-L50x50x6", "dist": "30mm" },
-  { "spref": "/BS-L65x65x6", "dist": "35mm" },
-  { "spref": "/BS-L75x75x9", "dist": "40mm" }
+  { "spref": "/BS-L50x50x6", "xdist": "30mm", "ydist": "30mm" },
+  { "spref": "/BS-L65x65x6", "xdist": "35mm", "ydist": "35mm" },
+  { "spref": "/BS-L75x75x9", "xdist": "40mm", "ydist": "35mm" }
 ]
 ```
 
