@@ -55,6 +55,9 @@ Creates or updates the SPCO elements under the ancillaries SPEC element from the
 
 Reloads the `sds_settings.json` file and reinitializes SDS.
 
+> [!TIP]
+> If SDS encounters a JSON parsing error while loading the file, the error is shown in the Command Window.
+
 ## Help
 
 ### Open Docs

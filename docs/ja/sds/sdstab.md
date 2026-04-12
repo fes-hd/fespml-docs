@@ -55,6 +55,9 @@ purpose が `SDS` の CATE 要素の下にある SCOM 要素から、アンシ�
 
 `sds_settings.json` ファイルを再ロードし、SDSを再初期化します。
 
+> [!TIP]
+> ファイルの読み込み時に JSON の解析エラーが発生した場合、そのエラーは Command Window に表示されます。
+
 ## Help
 
 ### Open Docs
