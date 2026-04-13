@@ -140,7 +140,7 @@ Prompts you to pick a position in the 3D view, then sets the STRU element positi
 Prompts you to pick a position in the 3D view, then extends the current steelwork section to the picked position. It also creates the joint FIXING element defined in the Framework Data File for the current framework tag when the element at the picked position satisfies the [condition](framework.md#condition) in the joint definitions.
 
 > [!TIP]
-> If you pick a bolting ancillary, the steelwork section is extended beyond the picked position by the length specified by [steelEndLengths](ancillary.md#steelendlengths) in the Ancillary Data File.
+> If you pick an ancillary, the steelwork section is extended beyond the picked position by the length specified by [steelEndLengths](ancillary.md#steelendlengths) in the Ancillary Data File.
 
 ### Delete Joint Fixing
 

@@ -140,7 +140,7 @@
 3Dビューで位置をピックするように促し、現在の鋼材（steelwork section）をピックした位置まで延長します。また、ピックした位置の要素がジョイント定義の[condition](framework.md#condition)を満たしている場合、現在のフレームワークタグ用にフレームワークデータファイルで定義されたジョイントFIXING要素を作成します。
 
 > [!TIP]
-> ボルト接合用の ancillary をピックした場合、鋼材セクションはピックした位置を超えて、Ancillary Data File の [steelEndLengths](ancillary.md#steelendlengths) で指定された長さだけさらに延長されます。
+> アンシラリーをピックした場合、鋼材セクションはピックした位置を超えて、Ancillary Data File の [steelEndLengths](ancillary.md#steelendlengths) で指定された長さだけさらに延長されます。
 
 ### Delete Joint Fixing
 
