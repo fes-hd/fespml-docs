@@ -178,15 +178,15 @@ End lengths of steelwork touched by the ancillary, by `bore` size. Each value is
 
 ### steelBoltGauges
 
-Bolt gauge distances for bolting ancillaries, by `spref`. Each entry specifies the distances from the steelwork LBOT P-line to the bolting position.
+Bolt gauge distances for bolting ancillaries, by `spref`. Each entry specifies the distances from the steelwork justification line (Jusline) to the bolting position.
 
 ![Bolt Gauge](_images/ancillary_steel_bolt_gauge.png)
 
 **Properties:**
 
 - `spref` - SPCO Ref of the steelwork profile.
-- `xdist` - Distance from the steelwork LBOT P-line to the bolting position in the X direction shown in the steelwork profile catalogue.
-- `ydist` - Distance from the steelwork LBOT P-line to the bolting position in the Y direction shown in the steelwork profile catalogue.
+- `xdist` - Distance from the steelwork justification line (Jusline) to the bolting position in the X direction shown in the steelwork profile catalogue.
+- `ydist` - Distance from the steelwork justification line (Jusline) to the bolting position in the Y direction shown in the steelwork profile catalogue.
 
 **Example:**
 

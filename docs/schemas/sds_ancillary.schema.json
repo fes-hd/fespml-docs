@@ -148,12 +148,12 @@
                     },
                     "xdist": {
                         "type": "string",
-                        "description": "Distance from the steelwork LBOT P-line to the bolting position in the X direction",
+                        "description": "Distance from the steelwork justification line (Jusline) to the bolting position in the X direction",
                         "default": "25mm"
                     },
                     "ydist": {
                         "type": "string",
-                        "description": "Distance from the steelwork LBOT P-line to the bolting position in the Y direction",
+                        "description": "Distance from the steelwork justification line (Jusline) to the bolting position in the Y direction",
                         "default": "25mm"
                     }
                 },
