@@ -39,6 +39,9 @@ For each SUPPO processed by SDS, `!!SDSDRAWER` is made available for that SUPPO 
 - `.ClearLayers(!vorder is STRING)` - Clear layers for dimension and label elements.
 - `.UpdateViews()` - Update all the views.
 - `.DrawMtoTable()` - Draw the MTO table.
+- `.DrawMtoLabels(!vorder is STRING)` - Draw the MTO part number labels.
+- `.DrawTouchedElementLabels(!vorder is STRING)` - Draw labels for the touched element names.
+- `.SpreadTextLabels(!vorder is STRING)` - Remote-spread text-based labels.
 - `.DrawItemLabels(!vorder is STRING)` - Draw item labels and remote-spread them.
 - `.DrawGeneralSymbols(!vorder is STRING)` - Draw pipe end/break symbols and the origin symbol.
 - `.DrawRefDimensions(!vorder is STRING)` - Draw reference dimensions to the nearest grid.
@@ -63,7 +66,9 @@ For each SUPPO processed by SDS, `!!SDSDRAWER` is made available for that SUPPO 
   "!!SDSDRAWER.DrawDimensions('FRONT RSIDE PLAN')",
   "!!SDSDRAWER.DrawRefDimensions('PLAN')",
   "!!SDSDRAWER.DrawPipeNames('PLAN RSIDE FRONT')",
-  "!!SDSDRAWER.DrawItemLabels('ISO3')",
+  "!!SDSDRAWER.DrawMtoLabels('ISO3')",
+  "!!SDSDRAWER.DrawTouchedElementLabels('ISO3')",
+  "!!SDSDRAWER.SpreadTextLabels('ISO3')",
   "!!SDSDRAWER.DrawDetailOlays()"
 ]
 ```
@@ -572,6 +577,30 @@ SYTM Ref used as the right-leader weld symbol.
 
 ```json
 "labWeldRight": "/FES-FIELD-WELD-R"
+```
+
+### labMtoNo
+
+SYTM Ref used as the MTO part number label.
+
+![MTO Part No.](_images/drawopt_lab_mto_no.png)
+
+**Example:**
+
+```json
+"labMtoNo": "/FES-MTO-NO"
+```
+
+### labTouchItem
+
+SYTM Ref used as the name label of an element touching the support.
+
+![MTO Touch Item](_images/drawopt_lab_touch_item.png)
+
+**Example:**
+
+```json
+"labTouchItem": "/FES-TOUCH-ITEM"
 ```
 
 ### labHoleCLines

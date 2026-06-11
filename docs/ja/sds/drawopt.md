@@ -39,7 +39,9 @@ SDS によって処理される各 SUPPO について、コマンドリストが
 - `.ClearLayers(!vorder is STRING)` - 寸法およびラベル要素用のレイヤーをクリアします。
 - `.UpdateViews()` - すべてのビューを更新します。
 - `.DrawMtoTable()` - MTOテーブル（材料集計表）を描画します。
-- `.DrawItemLabels(!vorder is STRING)` - 品目ラベルを描画し、重ならないように配置（リモートスプレッド）します。
+- `.DrawMtoLabels(!vorder is STRING)` - MTO の部品番号ラベルを作図します。
+- `.DrawTouchedElementLabels(!vorder is STRING)` - 接触している要素の名前ラベルを作図します。
+- `.SpreadTextLabels(!vorder is STRING)` - テキスト系ラベルをリモート配置で分散配置します。
 - `.DrawGeneralSymbols(!vorder is STRING)` - パイプの端部/破断記号および原点記号を描画します。
 - `.DrawRefDimensions(!vorder is STRING)` - 最も近いグリッドに対する参照寸法を描画します。
 - `.DrawPipeNames(!vorder is STRING)` - サポートされているパイプ名のラベルを描画します。
@@ -63,7 +65,9 @@ SDS によって処理される各 SUPPO について、コマンドリストが
   "!!SDSDRAWER.DrawDimensions('FRONT RSIDE PLAN')",
   "!!SDSDRAWER.DrawRefDimensions('PLAN')",
   "!!SDSDRAWER.DrawPipeNames('PLAN RSIDE FRONT')",
-  "!!SDSDRAWER.DrawItemLabels('ISO3')",
+  "!!SDSDRAWER.DrawMtoLabels('ISO3')",
+  "!!SDSDRAWER.DrawTouchedElementLabels('ISO3')",
+  "!!SDSDRAWER.SpreadTextLabels('ISO3')",
   "!!SDSDRAWER.DrawDetailOlays()"
 ]
 ```
@@ -570,6 +574,30 @@ SDSによって作成されるラベル要素に使用される LBSTYL Ref。
 
 ```json
 "labWeldRight": "/FES-FIELD-WELD-R"
+```
+
+### labMtoNo
+
+MTO 部品番号ラベルとして使用される SYTM Ref。
+
+![MTO Part No.](_images/drawopt_lab_mto_no.png)
+
+**Example:**
+
+```json
+"labMtoNo": "/FES-MTO-NO"
+```
+
+### labTouchItem
+
+サポートに接する要素の名称ラベルとして使用される SYTM Ref。
+
+![MTO Touch Item](_images/drawopt_lab_touch_item.png)
+
+**Example:**
+
+```json
+"labTouchItem": "/FES-TOUCH-ITEM"
 ```
 
 ### labHoleCLines

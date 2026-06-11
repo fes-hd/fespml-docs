@@ -33,7 +33,9 @@
                 "!!SDSDRAWER.DrawDimensions('FRONT RSIDE PLAN')",
                 "!!SDSDRAWER.DrawRefDimensions('PLAN')",
                 "!!SDSDRAWER.DrawPipeNames('PLAN RSIDE FRONT')",
-                "!!SDSDRAWER.DrawItemLabels('ISO3')",
+                "!!SDSDRAWER.DrawMtoLabels('ISO3')",
+                "!!SDSDRAWER.DrawTouchedElementLabels('ISO3')",
+                "!!SDSDRAWER.SpreadTextLabels('ISO3')",
                 "!!SDSDRAWER.DrawDetailOlays()"
             ],
             "format": "table"
@@ -144,6 +146,8 @@
                 "labPipeBreak",
                 "labWeldLeft",
                 "labWeldRight",
+                "labMtoNo",
+                "labTouchItem",
                 "labHoleCLines",
                 "rRules"
             ]
@@ -364,6 +368,16 @@
                     "type": "string",
                     "description": "SYTM Ref used for right-leader weld symbol",
                     "default": "/FES-FIELD-WELD-R"
+                },
+                "labMtoNo": {
+                    "type": "string",
+                    "description": "SYTM Ref used for MTO part number label",
+                    "default": "/FES-MTO-NO"
+                },
+                "labTouchItem": {
+                    "type": "string",
+                    "description": "SYTM Ref used for name label of element touching the support",
+                    "default": "/FES-TOUCH-ITEM"
                 },
                 "labHoleCLines": {
                     "type": "string",
