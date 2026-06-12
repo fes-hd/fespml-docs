@@ -36,6 +36,7 @@
                 "!!SDSDRAWER.DrawMtoLabels('ISO3')",
                 "!!SDSDRAWER.DrawTouchedElementLabels('ISO3')",
                 "!!SDSDRAWER.SpreadTextLabels('ISO3')",
+                "!!SDSDRAWER.SetViewTitles('ALL')",
                 "!!SDSDRAWER.DrawDetailOlays()"
             ],
             "format": "table"
@@ -157,7 +158,7 @@
             "description": "View settings specified by VIEW element name",
             "items": {
                 "$ref": "#/definitions/view",
-                "defaultProperties": ["name", "looking"]
+                "defaultProperties": ["name", "looking", "title"]
             },
             "format": "tabs"
         },
@@ -283,6 +284,10 @@
                         "Isometric view (N is top-left)",
                         "Isometric view (N is bottom-left)"
                     ]
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Title of the VIEW element"
                 },
                 "scales": {
                     "type": "string",

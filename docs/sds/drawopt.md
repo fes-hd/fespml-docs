@@ -48,6 +48,7 @@ For each SUPPO processed by SDS, `!!SDSDRAWER` is made available for that SUPPO 
 - `.DrawPipeNames(!vorder is STRING)` - Draw labels for supported pipe names.
 - `.DrawWeldSymbols(!vorder is STRING)` - Draw weld symbols.
 - `.DrawDimensions(!vorder is STRING)` - Draw dimensions.
+- `.SetViewTitles(!vorder is STRING)` - Set the view titles and adjust their text positions.
 - `.DrawDetailOlays()` - Draw detail views.
 
 > [!NOTE]
@@ -69,6 +70,7 @@ For each SUPPO processed by SDS, `!!SDSDRAWER` is made available for that SUPPO 
   "!!SDSDRAWER.DrawMtoLabels('ISO3')",
   "!!SDSDRAWER.DrawTouchedElementLabels('ISO3')",
   "!!SDSDRAWER.SpreadTextLabels('ISO3')",
+  "!!SDSDRAWER.SetViewTitles('ALL')",
   "!!SDSDRAWER.DrawDetailOlays()"
 ]
 ```
@@ -227,19 +229,23 @@ VIEW-specific override definitions. SDS applies an entry when its `name` pattern
 "viewDefs": [
   {
     "name": "*/PLAN",
-    "looking": "PLAN"
+    "looking": "PLAN",
+    "title": "Plan View"
   },
   {
     "name": "*/FRONT",
-    "looking": "FRONT"
+    "looking": "FRONT",
+    "title": "Front View"
   },
   {
     "name": "*/SIDE",
-    "looking": "RSIDE"
+    "looking": "RSIDE",
+    "title": "Side View"
   },
   {
     "name": "*/ISO",
     "looking": "ISO3",
+    "title": "Iso View",
     "scales": "AUTO"
   }
 ]
@@ -373,6 +379,16 @@ Looking direction preset for the VIEW element.
 - `ISO2` - Isometric view (N is top-right)
 - `ISO3` - Isometric view (N is top-left)
 - `ISO4` - Isometric view (N is bottom-left)
+
+### title
+
+Title of the VIEW element.
+
+**Example:**
+
+```json
+"title": "Plan View"
+```
 
 ### scales
 

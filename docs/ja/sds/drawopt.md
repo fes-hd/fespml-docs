@@ -47,6 +47,7 @@ SDS によって処理される各 SUPPO について、コマンドリストが
 - `.DrawPipeNames(!vorder is STRING)` - サポートされているパイプ名のラベルを描画します。
 - `.DrawWeldSymbols(!vorder is STRING)` - 溶接記号を描画します。
 - `.DrawDimensions(!vorder is STRING)` - 寸法を描画します。
+- `.SetViewTitles(!vorder is STRING)` - ビューのタイトルを設定し、そのテキストの位置を調整します。
 - `.DrawDetailOlays()` - 詳細ビューを描画します。
 
 > [!NOTE]
@@ -68,6 +69,7 @@ SDS によって処理される各 SUPPO について、コマンドリストが
   "!!SDSDRAWER.DrawMtoLabels('ISO3')",
   "!!SDSDRAWER.DrawTouchedElementLabels('ISO3')",
   "!!SDSDRAWER.SpreadTextLabels('ISO3')",
+  "!!SDSDRAWER.SetViewTitles('ALL')",
   "!!SDSDRAWER.DrawDetailOlays()"
 ]
 ```
@@ -224,19 +226,23 @@ VIEW固有のオーバーライド定義。SDSは、その `name` パターン�
 "viewDefs": [
   {
     "name": "*/PLAN",
-    "looking": "PLAN"
+    "looking": "PLAN",
+    "title": "Plan View"
   },
   {
     "name": "*/FRONT",
-    "looking": "FRONT"
+    "looking": "FRONT",
+    "title": "Front View"
   },
   {
     "name": "*/SIDE",
-    "looking": "RSIDE"
+    "looking": "RSIDE",
+    "title": "Side View"
   },
   {
     "name": "*/ISO",
     "looking": "ISO3",
+    "title": "Iso View",
     "scales": "AUTO"
   }
 ]
@@ -370,6 +376,16 @@ VIEW要素用にプリセットされた表示方向（Looking direction）。
 - `ISO2` - 等角図（Isometric view、北が右上）
 - `ISO3` - 等角図（Isometric view、北が左上）
 - `ISO4` - 等角図（Isometric view、北が左下）
+
+### title
+
+VIEW要素のタイトル。
+
+**Example:**
+
+```json
+"title": "Plan View"
+```
 
 ### scales
 
