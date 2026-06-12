@@ -579,6 +579,18 @@ SYTM Ref used as the right-leader weld symbol.
 "labWeldRight": "/FES-FIELD-WELD-R"
 ```
 
+### labCenterLines
+
+SYTM Ref used as the centerline (crosshair) symbol.
+
+![Center Lines](_images/drawopt_lab_center_lines.png)
+
+**Example:**
+
+```json
+"labCenterLines": "/FES-CROSS-HAIRS"
+```
+
 ### labMtoNo
 
 SYTM Ref used as the MTO part number label.
@@ -601,18 +613,6 @@ SYTM Ref used as the name label of an element touching the support.
 
 ```json
 "labTouchItem": "/FES-TOUCH-ITEM"
-```
-
-### labHoleCLines
-
-SYTM Ref used as the hole centerline (crosshair) symbol.
-
-![Hole CL](_images/drawopt_lab_cl_hole.png)
-
-**Example:**
-
-```json
-"labHoleCLines": "/FES-CROSS-HAIRS"
 ```
 
 ### rRules

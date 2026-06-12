@@ -576,6 +576,18 @@ SDSによって作成されるラベル要素に使用される LBSTYL Ref。
 "labWeldRight": "/FES-FIELD-WELD-R"
 ```
 
+### labCenterLines
+
+中心線（十字線）記号として使用される SYTM Ref。
+
+![Center Lines](_images/drawopt_lab_center_lines.png)
+
+**例:**
+
+```json
+"labCenterLines": "/FES-CROSS-HAIRS"
+```
+
 ### labMtoNo
 
 MTO 部品番号ラベルとして使用される SYTM Ref。
@@ -598,18 +610,6 @@ MTO 部品番号ラベルとして使用される SYTM Ref。
 
 ```json
 "labTouchItem": "/FES-TOUCH-ITEM"
-```
-
-### labHoleCLines
-
-穴の中心線（十字線）記号として使用される SYTM Ref。
-
-![Hole CL](_images/drawopt_lab_cl_hole.png)
-
-**例:**
-
-```json
-"labHoleCLines": "/FES-CROSS-HAIRS"
 ```
 
 ### rRules

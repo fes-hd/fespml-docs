@@ -146,9 +146,9 @@
                 "labPipeBreak",
                 "labWeldLeft",
                 "labWeldRight",
+                "labCenterLines",
                 "labMtoNo",
                 "labTouchItem",
-                "labHoleCLines",
                 "rRules"
             ]
         },
@@ -369,6 +369,11 @@
                     "description": "SYTM Ref used for right-leader weld symbol",
                     "default": "/FES-FIELD-WELD-R"
                 },
+                "labCenterLines": {
+                    "type": "string",
+                    "description": "SYTM Ref used for centerlines",
+                    "default": "/FES-CROSS-HAIRS"
+                },
                 "labMtoNo": {
                     "type": "string",
                     "description": "SYTM Ref used for MTO part number label",
@@ -378,11 +383,6 @@
                     "type": "string",
                     "description": "SYTM Ref used for name label of element touching the support",
                     "default": "/FES-TOUCH-ITEM"
-                },
-                "labHoleCLines": {
-                    "type": "string",
-                    "description": "SYTM Ref used for hole centerlines",
-                    "default": "/FES-CROSS-HAIRS"
                 },
                 "rRules": {
                     "type": "array",
