@@ -23,6 +23,12 @@
 - **Reselect...**: 選択した要素の別のタグを選択します。
 - **Delete**: 選択した要素を削除します。
 
+## Errors
+
+![Errors](_images/ui_suppo_errors.png)
+
+対象のSUPPOのエラーメッセージを表示します。
+
 ## Create
 
 ### Add Preliminary

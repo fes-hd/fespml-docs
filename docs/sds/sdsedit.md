@@ -23,6 +23,12 @@ Lists the member elements of the target SUPPO. Right-click this list to open the
 - **Reselect...**: Select another tag for the selected element.
 - **Delete**: Delete the selected element.
 
+## Errors
+
+![Errors](_images/ui_suppo_errors.png)
+
+Shows error messages for the target SUPPO.
+
 ## Create
 
 ### Add Preliminary
