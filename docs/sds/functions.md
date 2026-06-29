@@ -26,6 +26,18 @@ Returns the description text used in the MTO table for the specified PANE or BOX
 q var !!sdsgetplatedetail(ce)
 ```
 
+## sdsgetsuppoerrors
+
+`!!sdsgetsuppoerrors(!ref is DBREF) is STRING`
+
+Returns error messages for the specified support.
+
+**Example:**
+
+```pml
+q var !!sdsgetsuppoerrors(ce)
+```
+
 ## sdsrename
 
 `!!sdsrename(!old is STRING, !new is STRING)`

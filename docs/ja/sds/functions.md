@@ -26,6 +26,18 @@ SDSには、以下の便利なグローバル関数が用意されています�
 q var !!sdsgetplatedetail(ce)
 ```
 
+## sdsgetsuppoerrors
+
+`!!sdsgetsuppoerrors(!ref is DBREF) is STRING`
+
+指定したサポートのエラーメッセージを返します。
+
+**Example:**
+
+```pml
+q var !!sdsgetsuppoerrors(ce)
+```
+
 ## sdsrename
 
 `!!sdsrename(!old is STRING, !new is STRING)`
