@@ -156,6 +156,12 @@ Deletes the current joint FIXING element.
 
 ## General
 
+### Move to Correct ZONE
+
+![Move to Correct ZONE](_images/ui_move_to_correct_zone.png)
+
+Moves the target SUPPO to the appropriate ZONE based on its position. When the SUPPO is located within the volume of a VOLM element, it is moved to the ZONE whose name is the VOLM name with the `/VOLM` suffix removed.
+
 ### Merge 2 Supports
 
 ![Merge 2 Supports](_images/ui_merge_supports.png)

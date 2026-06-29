@@ -156,6 +156,12 @@
 
 ## General
 
+### Move to Correct ZONE
+
+![Move to Correct ZONE](_images/ui_move_to_correct_zone.png)
+
+対象のSUPPOをその位置に応じた適切なZONEに移動します。SUPPOがVOLM要素のボリューム内にある場合、SUPPOはそのVOLM名から `/VOLM` 接尾辞を取り除いた名前のZONEに移動されます。
+
 ### Merge 2 Supports
 
 ![Merge 2 Supports](_images/ui_merge_supports.png)
