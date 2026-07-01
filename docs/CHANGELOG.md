@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.2.0 (2026-07-01)
+
+- Added support for CSV import and export in the **SDS Draw** form.
+- Changed the type of MTO number labels from `GLAB` to `SLAB`.
+- Changed the Draw Option file format:
+  - Added the `DrawMtoLabels`, `DrawTouchedElementLabels`, `SpreadTextLabels`, and `SetViewTitles` built-in methods to `!!SDSDRAWER`, and removed the `DrawItemLabels` built-in method from `!!SDSDRAWER` in the [drawProcedures](sds/drawopt.md#drawprocedures) property.
+  - Added the [title](sds/drawopt.md#title), [labMtoNo](sds/drawopt.md#labmtono), and [labTouchItem](sds/drawopt.md#labtouchitem) properties to the View Definition.
+  - Renamed the `labHoleCLines` property to [labCenterLines](sds/drawopt.md#labcenterlines) in the View Definition.
+- Added an error-checking feature to the **Support Editor** form and the global function [sdsgetsuppoerrors](sds/functions.md#sdsgetsuppoerrors).
+- Added the [Move to Correct ZONE](sds/sdsedit.md#move-to-correct-zone) button to the **Support Editor** form.
+
 ## 3.1.0 (2026-04-13)
 
 - Changed JSON parsing to use PML.NET.
