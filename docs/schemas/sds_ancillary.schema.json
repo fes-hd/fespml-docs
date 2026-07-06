@@ -30,6 +30,11 @@
             "default": "SUPC",
             "enum": ["SUPC", "TRUNNI", "LUG", "HANG"]
         },
+        "setCompRef": {
+            "type": "boolean",
+            "description": "If true, sets the compref when creating the ancillary",
+            "default": true
+        },
         "components": {
             "type": "array",
             "items": {
@@ -53,7 +58,7 @@
                     },
                     "insu": {
                         "type": "boolean",
-                        "description": "If true, setting the same insulation spec as the picked piping component to this component",
+                        "description": "If true, sets the same insulation spec as the picked piping component to this component",
                         "default": false
                     },
                     "reduOffset": {
@@ -178,6 +183,7 @@
         "imgfile",
         "condition",
         "owntype",
+        "setCompRef",
         "components",
         "postCommands",
         "steelEndLengths",

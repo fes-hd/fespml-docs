@@ -71,6 +71,16 @@ Type of the ancillary owner element to create in the model.
 "owntype": "SUPC"
 ```
 
+### setCompRef
+
+If `true`, sets the compref when creating the ancillary.
+
+**Example:**
+
+```json
+"setCompRef": true
+```
+
 ### components
 
 List of component definitions that SDS uses to build the ancillary. Each entry defines one component to create, and SDS creates the components in order.

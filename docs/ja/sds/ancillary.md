@@ -71,6 +71,16 @@
 "owntype": "SUPC"
 ```
 
+### setCompRef
+
+`true` の場合、アンシラリー作成時に compref を設定します。
+
+**Example:**
+
+```json
+"setCompRef": true
+```
+
 ### components
 
 SDSがアンシラリーを構築するために使用するコンポーネント定義のリストです。各エントリは作成する1つのコンポーネントを定義し、SDSは指定された順序でコンポーネントを作成します。
