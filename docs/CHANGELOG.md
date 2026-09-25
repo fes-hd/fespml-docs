@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.3.0 (2026-09-25)
+
+- Added offset buttons to the **Support Editor** form.
+- Added [setCompRef](sds/ancillary.md#setcompref) property to the Ancillary Data File.
+- Added support for attaching ancillaries to non-piping items.
+
 ## 3.2.0 (2026-07-01)
 
 - Added support for CSV import and export in the **SDS Draw** form.

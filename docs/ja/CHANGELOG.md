@@ -1,5 +1,11 @@
 # 変更履歴
 
+## 3.3.0 (2026-09-25)
+
+- **Support Editor** フォームにオフセットボタンを追加しました。
+- Ancillary Data File に [setCompRef](sds/ancillary.md#setcompref) プロパティを追加しました。
+- 配管以外のアイテムにも ancillary を取り付けられるように修正しました。
+
 ## 3.2.0 (2026-07-01)
 
 - **SDS Draw** フォームで CSV のインポートおよびエクスポートに対応しました。
